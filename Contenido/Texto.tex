@@ -1,0 +1,1493 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{Definiciones previas}
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+
+\begin{definition*}
+Dadas dos funciones \(f\) y \(g\) se definen las operaciones siguientes:
+
+\begin{enumerate}
+\item su \textbf{suma} como 
+	\[
+		(f+g)(x)=f(x)+g(x)
+	\]
+	
+\item su \textbf{diferencia} como
+	\[
+		(f-g)(x)=f(x)-g(x)
+	\]
+
+\item su \textbf{producto} como
+	\[
+		(f\cdot g)(x)=f(x)\cdot g(x)
+	\]
+
+\item su \textbf{cociente} como
+	\[
+	(f/ g)(x)=f(x)/g(x)\qquad g(x)\neq 0
+	\]
+\end{enumerate}
+
+\end{definition*}
+
+ %%%%% ejemplo de operaciones entre funciones
+ Por ejemplo, demos dos funciones \(f(x)=x^2\) y \(g(x)=\frac{1}{x^2-1}.\) Operemos un poco con estas dos funciones:\\
+ \begin{itemize}
+ 	\item Sumemos \(f+g\)
+ 	\begin{align*}
+ 		(f+g)(x)&=f(x)+g(x)\\
+ 		&=x^2+\dfrac{1}{x^2-1}\\
+ 		&=\dfrac{x^4-x^2+1}{x^2-1}
+ 	\end{align*}
+ 	
+ 	\item Restemos \(f-g\)
+ 	\begin{align*}
+ 		(f-g)(x)&=f(x)-g(x)\\
+ 		&=x^2-\dfrac{1}{x^2-1}\\
+ 		&=\dfrac{x^4-x^2-1}{x^2-1}
+ 	\end{align*}
+ 	
+ 	\item Multipliquemos ambas funciones
+ 	\begin{align*}
+ 		(f\cdot g)(x)&=f(x)\cdot g(x)\\
+ 		&=x^2\cdot\dfrac{1}{x^2-1}\\
+ 		&=\dfrac{x^2}{x^2-1}
+ 	\end{align*}
+ 	
+ 	\item Dividamos ambas funciones
+ 	\begin{align*}
+ 		(f/g)(x)&=\dfrac{f(x)}{g(x)}\\
+ 		&=x^2\cdot(x^2-1)\\
+ 		&=x^4-x^2
+ 	\end{align*}
+ \end{itemize}
+ Adem\'as, si quieren encontrar el dom\'inio de la funci\'on obtenida solo deber\'ian intersecar los dominios de las funciones con las que operaron. Por ejemplo sabemos que el dom\'inio de la funci\'on \(f(x)=x^2\) es \(\mathbb{R}\) y de la funci\'on \(g(x)=\frac{1}{x^2-1}\) es \(\mathbb{R}-\{-1,1\},\) ahora intersecando ambos dominios obtienen el dom\'inio de la funci\'on \(f\cdot g\) que es \(\mathbb{R}\cap\left(\mathbb{R}-\{-1,1\}\right)=\mathbb{R}-\{-1,1\}.\)\newline
+
+
+
+\begin{exercise}
+Determine el dominio de la funci\'on resultante
+
+\begin{enumerate}
+\item \(f+g\)
+\item \(f-g\)
+\item \(f\cdot g\)
+\item \(f/g\)
+\item \(g/f\)
+
+\end{enumerate}
+
+\end{exercise}
+
+\begin{example}
+	Si \(f(x)=\sqrt{x}\) y \(g(x)=x^2-1\). La funci\'on raz\'iz cuadrada est\'a definida de reales no negativos (reales positivos uni\'on el cero) en reales no negativos, as\'i de la funci\'on \(f\) obtenemos una restricci\'on que es \(x\geq 0,\) por ende el dom\'inio de la funci\'on \(f\) es \([0;+\infty[.\) Por otro lado, la funci\'on \(g\) es un polin\'omio, por lo cu\'al su dom\'inio es todos los reales.
+
+Ahora, para encontrar el dom\'inio de la funci\'on \(f+g\) debemos intersecar ambos dom\'inios, es decir, que el dom\'inio es \({[0;+\infty[}\).
+
+Para la funci\'on \(f-g\) es el mismo dom\'inio, pues
+
+\begin{align*}
+	(f-g)(x)&=f(x)-g(x)\\
+	&=f(x)-1*g(x).
+\end{align*}
+Al igual que para la suma y la diferencia, el dom\'inio es el mismo pues
+\begin{align*}
+	(f+ g)(x)&=f(x)+ g(x)\\
+	&=\sqrt{x}+(x^2-1)\\
+	&=x^2+\sqrt{x}-1
+\end{align*}
+
+Veamos que sucede en la multiplicaci\'on, 
+\begin{align*}
+(f\cdot g)(x)&=f(x)\cdot g(x)\\
+&=\sqrt{x}\left(x^2-1\right)\\
+&=x^\frac{3}{2}-\sqrt{x}
+\end{align*}
+como se puede apreciar el dominio es el mismo, pues la \'unica condici\'on que existe es la condici\'on de la funci\'on Ra\'iz Cuadrada.\newline
+
+Ahora, algo interesante pasa con la operaci\'on de cociente, notemos que\(\frac{1}{g(x)}=\frac{1}{x^2-1}\) y que su dominio no es \(\mathbb{R}\) si no m\'as bien \(\mathbb{R}-\{-1,1\}.\)
+
+\begin{align*}
+(f/g)(x)&=f(x)/g(x)\\
+&=f(x)\cdot\frac{1}{g(x)}\\
+&=\dfrac{\sqrt{x}}{x^2-1}
+\end{align*}
+
+Y su dominio es \(\left(\mathbb{R}-\{-1,1\}\right)\cap\mathbb{R}^+=\mathbb{R}^+-\{1\}.\)\newline
+\end{example}
+
+Como habeis observado generalmente, en la \textbf{suma, diferencia y multiplicaci\'on} para encontrar el dominio de la funci\'on resultante basta intersecar sus dominios. Por otro lado, en el \textbf{cociente} de funciones primero deben encontrar el dominio de la funci\'on \(\frac{1}{g(x)}\) y luego proceder a intersecar sus dominios, pues como se vi\'o en el ejemplo anterior, el cociente de funciones no es m\'as que una multiplicaci\'on de funciones.\newline
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{definition*}[\index{Funci\'on par e impar}]
+
+\begin{enumerate}
+\item Una funci\'on \(f\) se dice par cuando para cada \(x\) en el dominio de \(f\)
+	\[
+	f(-x)=f(x)
+	\]
+
+\item Una funci\'on \(f\) se dice impar cuando para cada \(x\) en el dominio de \(f\)
+	\[
+		f(-x)=-f(x)
+	\]
+\end{enumerate}
+
+\end{definition*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%   EJEJMPLOS DE FUNCIOENS APRES E IMPARES
+
+Vemos algunos ejemplos de esto:
+
+\begin{itemize}
+	\item \(f(x)=\frac{x^2}{x^2-1}\) es una funci\'on par, pues
+	\begin{align*}
+	f(-x)&=\dfrac{(-x)^2}{(-x)^2-1}\\
+	&=\dfrac{x^2}{x^2-1}\\
+	&=f(x).
+	\end{align*}
+	
+	\item \(\cos(x)\) es una funci\'on par, pues
+	\[\cos(-x)=\cos(x).\]
+	
+	\item \(g(x)=x\) es una funci\'on impar, pues
+	\begin{align*}
+	g(-x)&=-x\\
+	&=-g(x).
+	\end{align*}
+	
+	\item \(\sin(x)\) es una funci\'on impar, pues
+		\[\sin(-x)=-\sin(x).\]$  $
+	
+	\item \(h(x)=3x^2+2x\) no es una funci\'on par ni impar, pues
+	\begin{align*}
+	h(-x)&=3(-x)^2+2(-x)\\
+	&=3x^2-2x\\
+	&\neq h(x).
+	\end{align*}
+\end{itemize}
+
+
+\begin{definition*}[\index{Funci\'on compuesta}]
+	Dadas dos funciones \(f\) y \(g,\) la funci\'on compuesta denotada por \(f\circ g,\) est\'a definida por
+	\[
+	(f\circ g)(x)=f(g(x))
+	\]
+	
+\end{definition*}
+
+
+%%%%%%%%%%%%%%%%%%% AUMENTAR PROPEIDADES DE LOGARITMOS
+\begin{property}
+	Sean \(f(x)\) y \(g(x)\) dos funciones, se cumplen las siguientes propiedades:
+	\begin{enumerate}
+		\item \(\log(f(x)\cdot g(x))=\log(f(x))\cdot\log(g(x))\)
+		\item \(\log(f(x)/g(x))=\log(f(x))-\log(g(x)),\) si \(g(x)\neq 0.\)
+		\item \(\log(f(x))^{g(x)}=g(x)\cdot\log(f(x))\)
+	\end{enumerate}
+\end{property}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{L\'imites}
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+
+
+\section*{L\'imite de sucesiones}
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+
+
+%%%% DEFINICION DE LÍMITE DE UNA SUCESIÓN	
+\begin{definition}
+	\(L\) se dice que es el l\'imite de una sucesi\'on \(x_1,x_2,x_3,\cdots,x_n,\cdots\) si, para todo \(\varepsilon>0\) existe un n\'umero \(N\) en los naturales tal que
+	\[
+	\text{si }n>N\Rightarrow\left|x_n-L\right|<\varepsilon.
+	\]
+	
+\end{definition}
+
+%%%%%%%%%%%%% LIMITES DE SUCESIONES
+
+\begin{exercise}
+	Hallar los l\'imites de las sucesiones
+	\begin{enumerate}
+		\item \(1,-\frac{1}{2},\frac{1}{3},\dots,(-1)^{n-1}\frac{1}{n},\dots\)
+		\item \(\frac{2}{1},\frac{4}{3},\frac{6}{5},\dots,\frac{2n}{2n+1},\dots\)
+		\item \(\sqrt{2},\sqrt{2\sqrt{2}},\sqrt{2\sqrt{2\sqrt{2}}},\dots\)
+	\end{enumerate}
+\end{exercise}
+
+\begin{example}
+	\begin{enumerate}
+		\item Veamos la expresi\'on \(x_n=(-1)^{n-1}\frac{1}{n}\) en dos casos.
+			\begin{enumerate}
+				\item Si \(n\) es par tenemos que
+						\[
+						\lim\limits_{n\to +\infty}{x_n}=\lim\limits_{n\to +\infty}{-\frac{1}{n}}=0.
+						\]
+				
+				\item Si \(n\) es impar, se tiene que
+						\[
+						\lim\limits_{n\to +\infty}{x_n}=\lim\limits_{n\to +\infty}{(-1)^{n-1}\frac{1}{n}}=\lim\limits_{n\to+\infty}{\frac{1}{n}}=0.
+						\]
+			\end{enumerate}
+		
+		\item Notemos como \(x_n=\frac{2n}{2n+1},\) entonces 
+		\[\lim\limits_{n\to+\infty}\frac{2n}{2n+1}=\lim\limits_{n\to+\infty}\frac{2}{2+\frac{1}{n}}=1.\]
+		\item Para esta sucesi\'on veamos como son uno a uno sus t\'erminos:\newline
+		
+		\begin{equation*}
+		\begin{array}{lclclcl}
+		a_1&=&\sqrt{2}&=&2^{\frac{1}{2}}\\
+		a_2&=&\sqrt{2\sqrt{2}}&=&2^{\frac{1}{2}}\cdot 2^{\frac{1}{4}}&=&2^{\frac{1}{2}+\frac{1}{4}}\\
+		a_3&=&\sqrt{2\sqrt{2\sqrt{2}}}&=&2^{\frac{1}{2}+\frac{1}{4}}\cdot 2^{\frac{1}{8}}&=&2^{\frac{1}{2}+\frac{1}{4}+\frac{1}{8}}\\
+		\vdots\\
+		a_n&=&2^{\frac{1}{2}(1+\frac{1}{2}+\frac{1}{2^2}+\cdots+\frac{1}{2^{n+1}})}\\
+		\end{array}
+		\end{equation*}
+		en donde la expresi\'on 
+		\[1+\frac{1}{2}+\frac{1}{2^2}+\cdots+\frac{1}{2^{n+1}}\]
+		es una progresi\'on geom\'etrica, con lo cu\'al obtenemos que
+		\[a_n=2^{\frac{1}{2}\cdot 2(1-\frac{1}{2^n})},\]
+		y as\'i se tiene que
+		\[\lim\limits_{n\to+\infty}{a_n}=\lim\limits_{n\to+\infty}{2^{\frac{1}{2}\cdot 2(1-\frac{1}{2^n})}}=2.\]
+		
+	\end{enumerate}
+\end{example}
+%%%%%%%%%%%%%%%%%%%%%%%%%	 TEOREMA DEL SANDUCHE
+\begin{property*}[Teorema del Sanduche]
+	Sean \(f,\) \(g\) y \(h(x)\) dos funciones tales que \(f(x)\leq g(x)\leq h(x)\) cuando \(x\) tiende a \(a\) (excepto posiblemente en \(a\)), y adem\'as
+	\[\lim\limits_{x\to a}f(x)=\lim\limits_{x\to a}h(x)=L,\]
+	entonces
+	\[\lim\limits_{x\to a}g(x)=L.\]
+\end{property*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%% OTROS EJERCICIOS DE LIMITE DE SUCEIONES
+	%%%%%%%%%%%%%% LIMITES DE SUCESIONES
+
+	\begin{exercise}
+		Halle los l\'imites de:
+		\begin{enumerate}
+			\item \(\lim\limits_{n\to+\infty}\left(\frac{1}{n^2}+\frac{2}{n^2}+\cdots+\frac{n-1}{n^2}\right)\)
+			\item \(\lim\limits_{n\to+\infty}{\frac{(n+1)(n+2)(n+3)}{n^3}}.\)
+			\item \(\lim\limits_{n\to+\infty}{\left(\sqrt{n+1}-\sqrt{n}\right).}\)
+			\item \(\lim\limits_{n\to+\infty}{\frac{n\sin(n!)}{n^2+1}}.\)
+		\end{enumerate}
+	\end{exercise}
+	%%%%%%%%%%%%%%% EXPLICACIÓN DEL PORQUE LA RESOLUCION DE LOS EJERCICIOS
+	Comencemos recordando que
+	\[\displaystyle\sum_{i=1}^{n}{i}=\dfrac{n(n+1)}{2}.\]
+	Adem\'as, conocemos que el recorrido de la funci\'on Seno y Coseno es \([-1;1].\)
+	
+	\begin{example}
+		\begin{enumerate}
+			\item Notemos a \(x_n=\left(\frac{1}{n^2}+\frac{2}{n^2}+\cdots+\frac{n-1}{n^2}\right),\) ahora
+			\begin{align*}
+			\lim\limits_{n\to+\infty}{x_n}&=\lim\limits_{n\to+\infty}\left(\frac{1}{n^2}+\frac{2}{n^2}+\cdots+\frac{n-1}{n^2}\right)\\
+			&=\lim\limits_{n\to+\infty}\dfrac{n(n-1)}{2n^2}\\
+			&=\lim\limits_{n\to+\infty}{\dfrac{n^2-n}{2n^2}}\\
+			&=\lim\limits_{n\to+\infty}{\dfrac{1-\frac{1}{n}}{2}}\\
+			&=\frac{1}{2}.
+			\end{align*}
+			
+			\item Llamemos \(x_n\) a la expresi\'on \(\frac{(n+1)(n+2)(n+3)}{n^3}.\) Calculemos el l\'imite
+			\begin{align*}
+			\lim\limits_{n\to+\infty}{x_n}&=\lim\limits_{n\to+\infty}{\frac{(n+1)(n+2)(n+3)}{n^3}}\\
+			&=\lim\limits_{n\to+\infty}{\left(\frac{n+1}{n}\right)\left(\frac{n+2}{n}\right)\left(\frac{n+3}{n}\right)}\\
+			&=\lim\limits_{n\to+\infty}{\left(1+\dfrac{1}{n}\right)\left(1+\dfrac{2}{n}\right)\left(1+\dfrac{3}{n}\right)}\\
+			&=1.
+			\end{align*}
+			\item Notemos como \(x_n\) a a expresi\'on \(\sqrt{n+1}-\sqrt{n}.\)
+			Arhora,
+			\begin{align*}
+			\lim\limits_{n\to+\infty}{x_n}&=\lim\limits_{n\to+\infty}{\sqrt{n+1}-\sqrt{n}}\\
+			&=\lim\limits_{n\to+\infty}{\left(\sqrt{n+1}-\sqrt{n}\right)\dfrac{\sqrt{n+1}+\sqrt{n}}{\sqrt{n+1}+\sqrt{n}}}\\
+			&=\lim\limits_{n\to+\infty}{\dfrac{1}{\sqrt{n+1}+\sqrt{n}}}\\
+			&=\dfrac{1}{+\infty}\\
+			&=0.
+			\end{align*}
+			\item Notemos como \(x_n=\frac{n\sin(n!)}{n^2+1}.\) Ahora, para todo \(n\in \mathbb{Z}^{+},\) se tiene que \(-1\leq \sin(n!)\leq 1\); adem\'as sabemos que \(n^2+1> 0\), as\'i \(\frac{n}{n^2+1}>0.\)\\
+			Con lo cual se obtiene que
+			\[-\dfrac{n}{n^2+1}\leq\dfrac{n\sin(n!)}{n^2+1}\leq\dfrac{n}{n^2+1},\]
+			ahora tome l\'imites a la desigualdad anterior y obtiene
+			\[0\leq\lim\limits_{n\to+\infty}\dfrac{n\sin(n!)}{n^2+1}\leq0,\]
+			por lo cu\'al \(\lim\limits_{n\to+\infty}\dfrac{n\sin(n!)}{n^2+1}=0.\)
+		\end{enumerate}
+		
+	\end{example}
+
+\section*{L\'imites de funciones}
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+
+%%%% DEFINICION DE LÍMITE  DE UNA FUNCION
+\begin{definition}
+	Sea \(f\) una funci\'on definida en alg\'un intervalo que contenga a \(a,\) excepto posiblemente en en \(a\) mismo. El l\'imite se define como \[(\forall\varepsilon>0)\,(\exists\delta>0)\,(0<\left|x-a\right|<\delta\Rightarrow\left|f(x)-L\right|<\varepsilon)\]
+\end{definition}
+
+
+\begin{exercise}
+Demostrar por la definici\'on de l\'imite que
+\[
+	\lim\limits_{x\to 2}{\dfrac{x^2-4}{x-2}}=4.
+\]
+\end{exercise}
+
+\begin{proof}
+Aqu\'i la funci\'on \(f(x)=\frac{x^2-4}{x-2}\) no est\'a definida en el punto \(x=2\).
+
+Es necesario demostrar que, tomando un \(\varepsilon > 0\) arbitrario encontraremos un \(\delta >0\) que cumpla la desigualdad
+
+\begin{equation}
+	\left|\dfrac{x^2-4}{x-2}-4\right|<\varepsilon,
+\end{equation}
+
+con la condici\'on que \(\left|x-2\right|<\delta.\) Pero para \(x\neq 2,\) la desigualdad anterior es equivalente a 
+
+\begin{equation}
+\begin{aligned}
+	\left|\dfrac{(x-2)(x+2)}{x-2}-4\right|&=\left|(x+2)-4\right|\\ 
+		&<\varepsilon.
+\end{aligned}
+\end{equation}
+
+As\'i pues, siendo \(\varepsilon\) arbitrario, y tomando \(\delta=\varepsilon\) se cumplen las desigualdades (1) y (2).
+
+Esto significa que el l\'imite de \(f(x)\) es 4, cuando \(x\to 2.\)
+
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%% TEOREMA propiedades de límites
+\begin{property}
+	Sean \(f_1\) y \(f_2\) dos funciones, si existen \(\lim\limits_{n\to+\infty}f_1(x)\) y \(\lim\limits_{n\to+\infty}f_2(x)\) entonces se cumplen las siguientes propiedades:
+	\begin{enumerate}
+		\item \(\lim\limits_{n\to+\infty}\left[f_1(x)+f_2(x)\right]=\lim\limits_{n\to+\infty}f_1(x)+\lim\limits_{n\to+\infty}f_2(x)\)						\item \(\lim\limits_{n\to+\infty}\left[f_1(x)\cdot f_2(x)\right]=\lim\limits_{n\to+\infty}f_1(x)\cdot\lim\limits_{n\to+\infty}f_2(x)\)
+		\item \(\lim\limits_{n\to+\infty}\left[\dfrac{f_1(x)}{f_2(x)}\right]=\dfrac{\lim\limits_{n\to+\infty}f_1(x)}{\lim\limits_{n\to+\infty}f_2(x)}\quad\text{si }\lim\limits_{n\to+\infty}f_2(x)\neq 0 .\)
+	\end{enumerate}
+\end{property}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% DEFINICION DE LIMITE AL INFINITO
+\begin{definition}
+	Sea \(f\) una funci\'on, se dice que \(L\) es el l\'imite al infinito cuando
+	\[\left(\forall\varepsilon>0\right)\:\left(\exists R>0\right)\left(\left|x\right|>R\Rightarrow\left|f(x)-L\right|<\varepsilon\right).\]
+\end{definition}
+
+\begin{exercise}[L\'imite al infinito]
+Demostremos que 
+\[
+	\lim\limits_{x\to+\infty}{\dfrac{x+1}{x}}=1
+\]
+
+\end{exercise}
+
+
+\begin{proof}
+Como se puede observar
+\[
+	\dfrac{x+1}{x}=1+\dfrac{1}{x},
+\]
+
+por lo cual podemos utilizar esto en el l\'imite.
+
+Ahora, necesitamos demostrar que siendo \(\varepsilon>0\) se cumplir\'a la desigualdad
+
+\begin{equation}
+	\left|\left(1+\dfrac{1}{x}\right)-1\right|<\varepsilon,
+\end{equation}
+
+siempre que \(\left|x\right|>N,\) donde \(N>0\) depende de nuestro \(\varepsilon\). 
+
+Operando la desigualdad (3) obtenemos que
+%%%\begin{equation}
+\begin{align*}
+	\left|\frac{1}{x}\right|&<\varepsilon,
+\end{align*}
+%%%\end{equation}
+que es lo mismo que
+\begin{equation}
+\begin{aligned}
+	\left|x\right|&>\frac{1}{\varepsilon}\\
+			&=N.
+\end{aligned}
+\end{equation}
+
+Esto significa que \(\displaystyle\lim\limits_{x\to+\infty}\left(1+\frac{1}{x}\right)=\displaystyle\lim\limits_{x\to+\infty}\frac{x+1}{x}=1.\)
+\end{proof}
+
+%%%%%%%%%%%%%%% EJERCICIOS DE LÍMITES AL INFINITO
+\begin{exercise}
+	Encuentre los l\'imites al infinito de las siguientes funciones:
+	\begin{enumerate}
+		\item \(\lim\limits_{x\to+\infty}\frac{x^2-5x+1}{3x+7}.\)
+		\item \(\lim\limits_{x\to+\infty}\frac{2x^2-3x-4}{\sqrt{x^4+1}}.\)
+		\item \(\lim\limits_{x\to+\infty}\frac{\sqrt{x}}{\sqrt{x+\sqrt{x+\sqrt{x}}}}. \)
+	\end{enumerate}
+\end{exercise}
+Para resolver ejercicios de la forma \(\lim\limits_{x\to+\infty}\dfrac{a_nx^n+a_{n-1}x^{n-1}+a_{n-2}x^{n-2}+\cdots+a_0}{b_mx^m+b_{m-1}x^{m-1}+b_{m-2}x^{m-2}+\cdots+b_0},\) podemos utilizar este peque\~no truquito. Multiplicamos la funci\'on por \(\dfrac{\frac{1}{x^n}}{\frac{1}{x^n}}\) y as\'i obtenemos
+\begin{align*}
+\lim\limits_{x\to+\infty}f(x)=\dfrac{a_nx^n+a_{n-1}x^{n-1}+\cdots+a_0}{b_mx^m+b_{m-1}x^{m-1}+\cdots+b_0}&=\lim\limits_{x\to+\infty}\frac{a_n+\dfrac{a_{n-1}}{x}+\cdots+\dfrac{a_0}{x^n}}{b_mx^{m-n}+b_{m-1}x^{m-n-1}+\cdots+b_0x^{-n} }\\
+&=\dfrac{a_n+0+\cdots+0}{\lim\limits_{x\to+\infty}\left(b_mx^{m-n}+b_{m-1}x^{m-n-1}+\cdots+b_0x^{-n}\right)}\\
+&=\dfrac{a_n}{b_m\lim\limits_{x\to+\infty}x^{m-n}+b_{m-1}\lim\limits_{x\to+\infty}x^{m-n-1}+\cdots+b_0\lim\limits_{x\to+\infty}\dfrac{1}{x^n}}
+\end{align*}
+%%%%%%%%%%%%%%%%% VERIFICAR SI ALGO FALTA
+\begin{example}
+	\begin{enumerate}
+		\item Denominemos \(f(x)\) a la expresi\'on \(\frac{x^2-5x+1}{3x+7},\) calculemos el l\'imite
+		\begin{align*}
+		\lim\limits_{x\to+\infty}f(x)&=\lim\limits_{x\to+\infty}\dfrac{x^2-5x+1}{3x+7}\\
+		&=\lim\limits_{x\to+\infty}\dfrac{1-\dfrac{5}{x}+\dfrac{1}{x^2}}{\dfrac{3}{x}+\dfrac{7}{x^2}}\\
+		&=\dfrac{1-0+0}{0+0}\\
+		&=+\infty.
+		\end{align*}
+		
+		\item Sea \(f(x)=\frac{2x^2-3x-4}{\sqrt{x^4+1}},\) procedamos a calcular su l\'imite al infinito.
+		\begin{align*}
+		\lim\limits_{x\to+\infty}f(x)&=\lim\limits_{x\to+\infty}\dfrac{2x^2-3x-4}{\sqrt{x^4+1}}\\
+		&=\lim\limits_{x\to+\infty}\dfrac{2-\dfrac{3}{x}-\dfrac{4}{x^2}}{\sqrt{1+\dfrac{1}{x^4}}}\\
+		&=\dfrac{2-0-0}{\sqrt{1+0}}\\
+		&=0.
+		\end{align*}
+		
+		\item Llamemos \(f(x)\) a la expresi\'on \(\frac{\sqrt{x}}{\sqrt{x+\sqrt{x+\sqrt{x}}}}.\)
+		\begin{align*}
+		\lim\limits_{x\to+\infty}f(x)&=\lim\limits_{x\to+\infty}\frac{\sqrt{x}}{\sqrt{x+\sqrt{x+\sqrt{x}}}}\\
+		&=\lim\limits_{x\to+\infty}\dfrac{1}{\sqrt{1+\sqrt{\dfrac{1}{x^2}+\sqrt{\dfrac{1}{x^3}}}}}\\
+		&=\dfrac{1}{\sqrt{1+\sqrt{0+\sqrt	{0}}}}\\
+		&=0.
+		\end{align*}
+	\end{enumerate}
+\end{example}
+
+
+%%%%%%%%%%%%%%%%%%%%% TEOREMA DE LIMITES DE POLINOMIOS Y FUNCIOENS RACIONALES
+\begin{property}
+	Si \(f\) es una funci\'on polinomial o una funci\'on racional y adem\'as \(a\) est\'a en el dominio de \(f,\) entonces
+	\[\lim\limits_{x\to a}f(x)=f(a).\]
+\end{property}
+\begin{exercise}
+	Calcule los l\'imites:
+	\begin{enumerate}
+		\item \(\lim\limits_{x\to 5}\dfrac{x^2-5x+10}{x^2-25} \)
+		\item  \(\lim\limits_{x\to 1}\left(\dfrac{1}{1-x}-\dfrac{3}{1-x^3}\right)\)
+	\end{enumerate}	
+\end{exercise}
+
+\begin{example}
+	\begin{enumerate}
+		\item Sea \(f(x)=\dfrac{x^2-5x+10}{x^2-25},\)
+		\begin{align*}
+		\lim\limits_{x\to 5}f(x)&=\lim\limits_{x\to 5}\dfrac{x^2-5x+10}{x^2-25}\\
+		&=\dfrac{5^2-5\cdot 5+10}{5^2-25}\\
+		&=\dfrac{10}{0}\\
+		&=+\infty.
+		\end{align*}
+		
+		\item Denominemos a la expresi\'on  \(\left(\dfrac{1}{1-x}-\dfrac{3}{1-x^3}\right)\) como \(f(x).\) As\'i
+		\begin{align*}
+		\lim\limits_{x\to 1}f(x)&=\lim\limits_{x\to 1}\left(\dfrac{1}{1-x}-\dfrac{3}{1-x^3}\right)\\
+		&=\lim\limits_{x\to 1}\dfrac{x^2+x-2}{1-x^3}\\
+		&=\lim\limits_{x\to 1}\dfrac{(x+2)(x-1)}{(1-x)(1+x+x^2)}\\
+		&=-\lim\limits_{x\to 1}\dfrac{(x+2)}{(1+x+x^2)}\\
+		&=-\dfrac{(1+2)}{(1+1+1^2)}\\
+		&=-1.
+		\end{align*}
+	\end{enumerate}
+\end{example}
+
+\section*{L\'imites por cambio de variable}
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%% EJERCICIOS DE LIMITES RACIONALES
+
+\begin{exercise}
+	Calcule los l\'imites de estas  expresiones racionales:
+	\begin{enumerate}
+		\item \(\lim\limits_{x\to 64}\frac{\sqrt{x}-8}{\sqrt[3]{x}-4}.\)
+		\item \(\lim\limits_{x\to 1}\frac{\sqrt[3]{x^2}-2\sqrt[3]{x}+1}{(x-1)^2}.\)
+	\end{enumerate}
+\end{exercise}
+Esta clase de ejercicios generalmente se los resuelve con un cambio de variable, por ejemplo si calcul\'asemos el l\'imite de \(f(x)=\frac{\sqrt{1+x}-1}{\sqrt[3]{1+x}-1}\) cuando \(x\to 0.\)\newline
+
+Tomando como cambio de variable \(1+x=y^6\), tenemos que
+\begin{align*}
+\lim\limits_{x\to 1}f(x)&=\lim\limits_{x\to 0}\dfrac{\sqrt{1+x}-1}{\sqrt[3]{1+x}-1}\\
+&=\lim\limits_{y\to 1}\dfrac{y^3-1}{y^2-1}\\
+&=\lim\limits_{y\to 1}\dfrac{y^2+y+1}{y+1}\\
+&=\dfrac{3}{2}.
+\end{align*}
+N\'otese que, cuando hacemos un cambio de variable debemos evaluar el mismo cambio de variable para saber el l\'imite que vamos a calcular, es decir, en el ejercicio anterior busc\'abamos calcular el \'imite de \(f(x)\) cuando \(x\to 1,\) ahora \(1+0=y^6\)  ser\'a donde vamos a calcular el l\'imite con el cambio de variable.\newline
+
+\begin{example}
+	\begin{enumerate}
+		\item Denominemos como \(f(x)\) a la expresi\'on \(\frac{\sqrt{x}-8}{\sqrt[3]{x}-4}.\) Sea \(x=y^6\) el cambio de variable, n\'otese que
+		\[\sqrt{x}=y^3\quad\wedge\quad\sqrt[3]{x}=y^2.\]
+		Ahora, cuando \(x\to64,\) \(y\to2,\) luego tenemos:
+		\begin{align*}
+		\lim\limits_{x\to 64}f(x)&=\lim\limits_{x\to 64}\dfrac{\sqrt{x}-8}{\sqrt[3]{x}-4}\\
+		&=\lim\limits_{y\to 2}\dfrac{y^3-8}{y^2-4} \\
+		&=\lim\limits_{y\to 2}\dfrac{(y-2)(y^2+2y+4)}{(y-2)(y+2)}\\
+		&=\lim\limits_{y\to 2}\dfrac{(y^2+2y+4)}{(y+2)}\\
+		&=\dfrac{4+4+4}{4}\\
+		&=3.
+		\end{align*}
+		\item Note que
+		\[\dfrac{\sqrt[3]{x^2}-2\sqrt[3]{x}+1}{(x-1)^2}=\dfrac{(\sqrt[3]{x}-1)^2}{(x-1)^2.}\]
+		Ahora, tomemos e cambio de variable \(x=y^3,\) as\'i \(\sqrt[3]{x}=y\) y adem\'as cuando \(x\to 1,\) \(y\to 1.\) As\'i tenemos
+		\begin{align*}
+		\lim\limits_{x\to 1}\dfrac{(\sqrt[3]{x}-1)^2}{(x-1)^2}&=\lim\limits_{y\to 1}\dfrac{(y-1)^2}{(y^3-1)^2}\\
+		&=\lim\limits_{y\to 1}\dfrac{1}{(y^2+y+1)^2}\\
+		&=\dfrac{1}{9}.
+		\end{align*}
+		
+	\end{enumerate}
+\end{example}
+
+ %%%%%%%%%%%%% OTRA MANERA DE CALCULAR LIMITES DE EXPRESIONES IRRACIONALES
+  Otra manera de calcular esta clase de l\'imites es de alguna manera trasladar la expresi\'on irracional del numerador al denominador o viceversa.\newline
+  
+  Por ejemplo, calculemos el l\'imite siguiente:
+  \begin{align*}
+  \lim\limits_{x\to a}\dfrac{\sqrt{x}-\sqrt{a}}{x-a}&=\lim\limits_{x\to a}\dfrac{x-a}{(x-a)\left(\sqrt{x}+\sqrt{a}\right)}\\
+  &=\lim\limits_{x\to a}\dfrac{1}{\sqrt{x}+\sqrt{a}}\\
+  &=\dfrac{1}{2\sqrt{a}}.
+  \end{align*}
+  
+ \begin{exercise}
+ 	Hallar los l\'imites de las siguientes expresiones:
+ 	\begin{enumerate}
+ 		\item \(\lim\limits_{x\to 0}\dfrac{\sqrt{1+x}-\sqrt{1-x}}{x}\)
+ 		\item \(\lim\limits_{x\to+\infty}\left(\sqrt{x(x+a)}-x\right)\)
+ 		\item \(\lim\limits_{x\to+\infty}\left(x+\sqrt[3]{1-x^3}\right)\)
+ 	\end{enumerate}
+ \end{exercise} 
+ \begin{example}
+ 	\begin{enumerate}
+ 		\item Calculemos el l\'imite \(\lim\limits_{x\to 0}\dfrac{\sqrt{1+x}-\sqrt{1-x}}{x}.\)
+ 		\begin{align*}
+ 		\lim\limits_{x\to 0}\dfrac{\sqrt{1+x}-\sqrt{1-x}}{x}&=\lim\limits_{x\to 0}\dfrac{2x}{x\left(\sqrt{1+x}+\sqrt{1-x}\right)}\\
+ 		&=\lim\limits_{x\to 0}\dfrac{2}{\sqrt{1+x}+\sqrt{1-x}}\\
+ 		&=1.
+ 		\end{align*}
+ 		\item Calculemos el l\'imite \(\lim\limits_{x\to+\infty}\left(\sqrt{x(x+a)}-x\right).\)
+ 		\begin{align*}
+ 		\lim\limits_{x\to+\infty}\left(\sqrt{x(x+a)}-x\right)&=\lim\limits_{x\to+\infty}\dfrac{\left(\sqrt{x(x+a)}-x\right)\left(\sqrt{x(x+a)}+x\right)}{\sqrt{x(x+a)}+x}\\
+ 		&=\lim\limits_{x\to+\infty}\dfrac{x(x+a)-x^2}{\sqrt{x(x+a)}+x}\\
+ 		&=\lim\limits_{x\to+\infty}\dfrac{ax}{\sqrt{x(x+a)}+x}\\
+ 		&=\lim\limits_{x\to+\infty}\dfrac{a}{\sqrt{1+\dfrac{a}{x}}+1}\\
+ 		&=\dfrac{a}{2}.
+ 		\end{align*}
+ 		
+ 		\item Resolvamos el l\'imite \(\lim\limits_{x\to+\infty}\left(x+\sqrt[3]{1-x^3}\right).\)
+ 		\begin{align*}
+ 		\lim\limits_{x\to+\infty}\left(x+\sqrt[3]{1-x^3}\right)&=\lim\limits_{x\to+\infty}\dfrac{\left(x+\sqrt[3]{1-x^3}\right)\left(x^2-x\sqrt[3]{1-x^3}+\sqrt[3]{(1-x^3)^2}\right)}{x^2-x\sqrt[3]{1-x^3}+\sqrt[3]{(1-x^3)^2}}\\
+ 		&=\lim\limits_{x\to+\infty}\dfrac{1}{x^2-x\sqrt[3]{1-x^3}+\sqrt[3]{(1-x^3)^2}} \\
+ 		&=\dfrac{1}{\infty}\\
+ 		&=0.
+ 		\end{align*}
+ 	\end{enumerate}
+ \end{example}
+%%%%%%%%%%%%%%%
+
+
+\section*{L\'imites de funciones compuestas}
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+
+\begin{property}
+	Sea \(n\in\mathbb{Z}^+-\{0\}\) y si \(\lim\limits_{x\to a}f(x)\) existe y es \(L,\) entonces
+	\[
+	\lim\limits_{x\to a}\left[f(x)\right]^n=\left[\lim\limits_{x\to a}f(x)\right]^n=L^n.
+	\]
+\end{property}
+
+%%%%%%%%%%%%%%%%%%  LIMITES UTILIZANDO EL LIMITE DE SIN(X)/X
+\begin{exercise}
+	Calcule los siguientes l\'imites utilizando la f\'ormula
+	\[\lim\limits_{x\to 0}\dfrac{\sin(x)}{x}=1.\]
+	\begin{multicols}{2}
+		\begin{enumerate}
+			\item \(\lim\limits_{x\to+\infty}{\frac{\sin(x)}{x}}\)
+			\item \(\lim\limits_{x\to 0}\frac{\sin(3x)}{x}\)
+			\item \(\lim\limits_{x\to 0}\frac{\sin(5x)}{\sin(2x)}\)
+			\item \(\lim\limits_{n\to +\infty}\left(n\sin\left(\frac{\pi}{n}\right)\right)\)
+			\item \(\lim\limits_{x\to 0}\frac{1-\cos(x)}{x^2}\)
+			% 		\item \(\lim\limits_{x\to 0}\left(x\sin\left(\frac{1}{x}\right)\right)\)
+			\item \(\lim\limits_{x\to 0}\cot(2x)\cot\left(\frac{\pi}{2}-x\right)\)
+			\item \(\lim\limits_{x\to 0}\frac{\tan(x)-\sin(x)}{x^3}\)
+			\item \(\lim\limits_{x\to 0}\frac{\arcsin(x)}{x}\)
+			\item \(\lim\limits_{x\to 1}\frac{\cos\left(\frac{\pi x}{2}\right)}{1-\sqrt{x}}\)
+			\item \(\lim\limits_{x\to 0}\frac{\sqrt{1+\sin(x)}-\sqrt{1-\sin(x)}}{x}\)
+		\end{enumerate}
+	\end{multicols}
+\end{exercise}
+N\'otese que el resultado de \(\lim\limits_{x\to 0}\dfrac{\sin(x)}{x}=1\) es muy fuerte, pues nos sirve para desarrollar cualquier l\'imite con relaciones trigonom\'etricas.	\newline
+
+\begin{example}
+	\begin{enumerate}
+		\item Sabemos que para cualquier \(x\) en los reales 
+		\[-1\leq\sin(x)\leq 1,\]
+		como buscamos el l\'imite cuando \(x\to +\infty,\) \(x\) debe ser un real positivo, as\'i
+		\[\dfrac{1}{x}>0.\]
+		Con lo cual obtenemos que
+		\[-\dfrac{1}{x}\leq\dfrac{\sin(x)}{x}\leq\dfrac{1}{x},\]
+		tomando l\'imites a ambos lados
+		\[0=-\lim\limits_{x\to+\infty}\dfrac{1}{x}\leq\lim\limits_{x\to+\infty}\dfrac{\sin(x)}{x}\leq\lim\limits_{x\to+\infty}\dfrac{1}{x}=0,\]
+		as\'i obtenemos que
+		\[\lim\limits_{x\to+\infty}{\frac{\sin(x)}{x}}=0.\]
+		
+		\item Tomemos el cambio de variable \(y=3x,\) as\'i cuando \(x\to 0,\) \(y\to 0.\)
+		\begin{align*}
+		\lim\limits_{x\to 0}\dfrac{\sin(3x)}{x}&=\lim\limits_{y\to 0}\dfrac{3\sin(y)}{y}\\
+		&=3\lim\limits_{y\to 0}\dfrac{\sin(y)}{y}\\
+		&=3
+		\end{align*}
+		
+		\item \begin{align*}
+		\lim\limits_{x\to 0}\dfrac{\sin(5x)}{\sin(2x)}&=\lim\limits_{x\to 0}\dfrac{5\cdot 2x}{5\cdot 2x}\cdot\\
+		&=\dfrac{5}{2}\cdot\lim\limits_{x\to 0}\dfrac{\sin(5x)}{5x}\cdot\lim\limits_{x\to 0}\dfrac{2x}{\sin(2x)}\\
+		&=\dfrac{5}{2}
+		\end{align*}
+		
+		\item Sea \(n=\frac{\pi}{x}\) un cambio de variable, cuando \(n\to+\infty,\) \(x\to 0\) con lo que obtenemos
+		\begin{align*}
+		\lim\limits_{n\to +\infty}\left(n\sin\left(\dfrac{\pi}{n}\right)\right)&=\lim\limits_{x\to 0}\dfrac{\pi\sin(x)}{x}\\
+		&=\pi
+		\end{align*}
+		
+		\item \begin{align*}
+		\lim\limits_{x\to 0}\dfrac{1-\cos(x)}{x^2}&=\lim\limits_{x\to 0}\dfrac{1-\cos(x)}{x^2}\dfrac{1+\cos(x)}{1+\cos(x)}\\
+		&=\lim\limits_{x\to 0}\dfrac{1-\cos^2(x)}{x^2(1+\cos(x))}\\
+		&=\lim\limits_{x\to 0}\dfrac{\sin^2(x)}{x^2(1+\cos(x))}\\
+		&=\lim\limits_{x\to 0}\dfrac{\sin^2(x)}{x^2}\cdot\lim\limits_{x\to 0}\dfrac{1}{(1+\cos(x))}\\
+		&=1\cdot\dfrac{1}{2}=\dfrac{1}{2}
+		\end{align*}
+		
+		\item Tomando en cuenta que
+		\[\cot\left(\dfrac{\pi}{x}-x\right)=-\tan(x)\Rightarrow\cot\left(2x\right)=\dfrac{\cot^2(x)-1}{2\cot(x)}.\]
+		\begin{align*}
+		\lim\limits_{x\to 0}\cot(2x)\cot\left(\frac{\pi}{2}-x\right)&=\lim\limits_{x\to 0}\dfrac{\cot^2(x)-1}{2\cot(x)}\cdot\left(-\tan(x)\right)\\
+		&=-\dfrac{1}{2}\lim\limits_{x\to 0}\left(\cot^2(x)-1\right)\tan^2(x)\\
+		&=-\dfrac{1}{2}\lim\limits_{x\to 0}\left(1-\tan^2(x)\right)\\
+		&=-\dfrac{1}{2}
+		\end{align*}
+		
+		\item \begin{align*}
+		\lim\limits_{x\to 0}\dfrac{\tan(x)-\sin(x)}{x^3}&=\lim\limits_{x\to 0}\dfrac{\dfrac{\sin(x)}{\cos(x)}-\sin(x)}{x^3}\\
+		&=\lim\limits_{x\to 0}\dfrac{\sin(x)\left(1-\cos(x)\right)}{x^3}\\
+		&=\lim\limits_{x\to 0}\dfrac{\sin(x)\left(1-\cos(x)\right)}{x^3}\cdot\dfrac{1+\cos(x)}{1+\cos(x)}\\
+		&=\lim\limits_{x\to 0}\dfrac{\sin(x)(1-\cos^2(x))}{x^3\left(1-\cos^2(x)\right)}\\
+		&=\lim\limits_{x\to 0}\dfrac{\sin^3(x)}{x^3}\lim\limits_{x\to 0}\dfrac{1}{1+\cos(x)}\\
+		&=\left[\lim\limits_{x\to 0}\dfrac{\sin(x)}{x}\right]^3\lim\limits_{x\to 0}\dfrac{1}{1+\cos(x)}\\
+		&=\dfrac{1}{2}
+		\end{align*}
+		
+		\item Sea \(y=\arcsin(x),\) as\'i \(x=\sin(y)\) ya dem\'as cuando \(x\to 0,\) \(y\to 0.\)
+		\begin{align*}
+		\lim\limits_{x\to 0}\dfrac{\arcsin(x)}{x}&=\lim\limits_{x\to 0}\dfrac{y}{\sin(y)}\\
+		&=\dfrac{1}{\lim\limits_{y\to 0}\dfrac{\sin(y)}{y}}\\
+		&=1
+		\end{align*}
+		
+		\item \begin{align*}
+		\lim\limits_{x\to 1}\dfrac{\cos\left(\dfrac{\pi x}{2}\right)}{1-\sqrt{x}}&=\lim\limits_{x\to 1}\dfrac{\cos\left(\frac{\pi x}{2}\right)}{1-\sqrt{x}}\poruno{1+\sqrt{x}}\\
+		&=\lim\limits_{x-1\to 0}\dfrac{\left(1+\sqrt{x}\right)\cos\left(\dfrac{\pi x}{2}\right)}{1-x}\\
+		&=\lim\limits_{y\to 0}\dfrac{\left(1+\sqrt{y+1}\right)\cos{\dfrac{\pi}{2}(y+1)}}{-y}\\
+		&=-\lim\limits_{y\to 0}\dfrac{\left(1+\sqrt{y+1}\right)\left(\cos\left(\dfrac{\pi y}{2}\right)-\sin\left(\dfrac{\pi y}{2}\right)\sin\left(\dfrac{\pi}{2}\right)\right)}{y}\\
+		&=-\lim\limits_{y\to 0}\dfrac{\left(1+\sqrt{y+1}\right)\left(0-\sin\left(\dfrac{\pi y}{2}\right)\right)}{y}\\
+		&=-\lim\limits_{y\to 0}{\left(1+\sqrt{y+1}\right)\left(\dfrac{-\sin\left(\dfrac{\pi y}{2}\right)}{y}\right)}\\
+		&=-\lim\limits_{y\to 0}{\left(1+\sqrt{y+1}\right)\left(\dfrac{-\sin\left(\dfrac{\pi y}{2}\right)}{y}\poruno{\dfrac{\pi}{2}}\right)}\\
+		&=(1+\sqrt{0+1})\left(\dfrac{\pi}{2}\right)\\
+		&=\pi.
+		\end{align*}
+		
+		\item \begin{align*}
+		\lim\limits_{x\to 0}\dfrac{\sqrt{1+\sin(x)}-\sqrt{1-\sin(x)}}{x}&=\lim\limits_{x\to 0}\dfrac{\sqrt{1+\sin(x)}-\sqrt{1-\sin(x)}}{x}\poruno{\sqrt{1+\sin(x)}+\sqrt{1-\sin(x)}}\\
+		&=\lim\limits_{x\to 0}\dfrac{2\sin(x)}{x\left(\sqrt{1+\sin(x)}+\sqrt{1-\sin(x)}\right)}\\
+		&=2\lim\limits_{x\to 0}\dfrac{\sin(x)}{x}\dfrac{1}{\sqrt{1+\sin(x)}+\sqrt{1-\sin(x)}}\\
+		&=\dfrac{2}{\sqrt{1+0}+\sqrt{1+0}}\\
+		&=1.
+		\end{align*}
+	\end{enumerate}
+\end{example}
+
+%%%%%%%%%%%%%%% Teorema
+\begin{property}
+	Cuando deseen hallar l\'imites de la forma 
+	\begin{equation}
+	\lim\limits_{x\to a}\left[\varphi(x)\right]^{\varPsi(x)}=C,
+	\end{equation}
+	deben tener en cuenta que:
+	\begin{enumerate}
+		\item Si existen l\'imites finitos 
+		\[
+		\lim\limits_{x\to a}\varphi(x)=A\text{ y }\lim\limits_{x\to a}\varPsi(x)=B,
+		\]
+		se tiene que \(C=A^B.\)\newline
+		
+		\item Si \(\lim\limits_{x\to a}\varphi(x)=A\neq 1\) y \(\lim\limits_{x\to a}\varPsi(x)=\pm\infty,\) el l\'imite (1.5) se resuelve dir\'ectamente.\newline
+		
+		\item Si \(\lim\limits_{x\to a}\varphi(x)=A=1\) y \(\lim\limits_{x\to a}\varPsi(x)=\infty,\) se supone que \(\varphi(x)=1+\alpha(x),\) donde \(\alpha(x)\to 0,\)  cuando \(x\to a\) y por consiguiente,
+		\[
+		C=\lim\limits_{x\to a}\left\{\left[1+\alpha(x)\right]^{\frac{1}{\alpha(x)}}\right\}^{\alpha(x)\varPsi(x)}=e^{\lim\limits_{x\to a}\left[\varphi(x)-1\right]\varPsi(x)}.
+		\]
+	\end{enumerate}
+\end{property}
+
+%%%%%%%%%%%%%%%%%%% Ejemplos del teorema
+Veamos un ejemplo de cada item:
+\begin{enumerate}
+	\item \(\lim\limits_{x\to 0}\left(\frac{\sin(2x)}{x}\right)^{1+x},\) es f\'acil ver que
+	\[
+	\lim\limits_{x\to 0}\dfrac{\sin(2x)}{x}=2\text{ y }\lim\limits_{x\to 0}\left(1+x\right)=1;
+	\]
+	por consiguiente 
+	\[
+	\lim\limits_{x\to 0}\left(\dfrac{\sin(2x)}{x}\right)^{1+x}=2^1=2.
+	\]
+	
+	\item \(\lim\limits_{x\to \infty}\left(\frac{x+1}{2x+1}\right)^{x^2},\) aqu\'i tenemos que
+	\[
+	\lim\limits_{x\to \infty}\left(\frac{x+1}{2x+1}\right)=\dfrac{1}{2}\text{ y }\lim\limits_{x\to\infty}x^2=+\infty,
+	\]
+	as\'i obtenemos que
+	\[
+	\lim\limits_{x\to \infty}\left(\frac{x+1}{2x+1}\right)^{x^2}=\left(\dfrac{1}{2}\right)^{+\infty}=0.
+	\]
+	
+	\item \(\lim\limits_{x\to\infty}\left(\frac{x-1}{x+1}\right)^x.\) \newline
+	
+	Tenemos que
+	\begin{align*}
+		\lim\limits_{x\to\infty}\left(\frac{x-1}{x+1}\right)&=\lim\limits_{x\to+\infty}\dfrac{1-\dfrac{1}{x}}{1+\dfrac{1}{x}}\\
+		&=1.
+	\end{align*}
+	
+	Ahora, como se indica en el teorema anterior hacemos una transformaci\'on al l\'imite de la manera siguiente
+	\begin{align*}
+	\lim\limits_{x\to+\infty}\left(\frac{x-1}{x+1}\right)^x&=\lim\limits_{x\to+\infty}\left[1+\left(\dfrac{1-x}{1+x}-1\right)\right]^x\\
+	&=\lim\limits_{x\to+\infty}\left\{\left[1+\left(\dfrac{-2}{x+1}\right)\right]^{\dfrac{x+1}{-2}}\right\}^{-\dfrac{2x}{1+x}}\\
+	&=e^{\lim\limits_{x\to+\infty}\dfrac{-2x}{x+1}}\\
+	&=e^{-2}.
+	\end{align*}
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%% COROLARIO DEL TEOREMA ANTERIOR
+% Conviene recordar que
+%\[
+%\lim\limits_{x\to+\infty}\left(1+\frac{k}{x}\right)^x=e^k.
+%\]
+%
+Del teorema anterior  podemos concluir que
+\[
+\lim\limits_{x\to+\infty}\left(1+\frac{k}{x}\right)^x=e^k.
+\]
+
+
+\begin{exercise}
+	Calcule los l\'imites siguientes:
+	\begin{multicols}{2}
+		\begin{enumerate}
+			\item \(\lim\limits_{x\to 0}\left(\frac{2+x}{3-x}\right)^x\)
+			\item \(\lim\limits_{x\to \infty}\left(\frac{1}{x^2}\right)^{\frac{2x}{x+1}}\)
+			\item \(\lim\limits_{x\to\infty}\left(\frac{x^2+2}{2x^2+1}\right)^{x^2}\)
+			\item \(\lim\limits_{x\to\infty}\left(\frac{x-1}{x+3}\right)^{x+2}\)
+			\item \(\lim\limits_{x\to 0}\left(1+\sin(x)\right)^{\frac{1}{x}}\)
+			\item \(\lim\limits_{x\to 0}\left(\cos(x)\right)^{x^2}\)
+		\end{enumerate}
+	\end{multicols}
+\end{exercise}
+
+%%%%%%%%%%%%%% Soluci\'on de los ejercicios anteriores
+
+\begin{example}
+	\begin{enumerate}
+		\item Tomen en cuenta que
+		\[
+		\lim\limits_{x\to 0}\dfrac{2+x}{3-x}=\dfrac{2}{3}\:\text{ y }\lim\limits_{x\to 0}x=0,
+		\]
+		sigue que
+		\begin{align*}
+		\lim\limits_{x\to 0}\left(\frac{2+x}{3-x}\right)^x&=\left(\dfrac{2}{3}\right)^0\\
+		&=0.
+		\end{align*}
+		
+		\item Como 
+		\[
+		\lim\limits_{x\to\infty}\dfrac{1}{x^2}=0\:\text{ y }\lim\limits_{x\to\infty}\dfrac{2x}{x+1}=2,
+		\]
+		tienen que
+		\begin{align*}
+		\lim\limits_{x\to \infty}\left(\dfrac{1}{x^2}\right)^{\dfrac{2x}{x+1}}&=(0)^2\\
+		&=0.
+		\end{align*}
+		
+		\item Tomen cuenta que
+		\[
+		\lim\limits_{x\to\infty}\dfrac{x^2+2}{2x^2+1}=\dfrac{1}{2}\:\text{ y }\lim\limits_{x\to\infty}x^2=+\infty,
+		\]
+		tienen que
+		\begin{align*}
+		\lim\limits_{x\to\infty}\left(\dfrac{x^2+2}{2x^2+1}\right)^{x^2}&=\left(\lim\limits_{x\to\infty}\dfrac{x^2+2}{2x^2+1}\right)^{\lim\limits_{x\to\infty}x^2}\\
+			&=\left(\dfrac{1}{2}\right)^{+\infty}\\
+			&=0.
+		\end{align*}
+		
+		\item Como
+		\[
+		\lim\limits_{x\to\infty}\dfrac{x-1}{x+3}=1\:\text{ y }\lim\limits_{x\to\infty}(x+2)=+\infty,
+		\]
+		tienen que
+		\begin{align*}
+		\lim\limits_{x\to\infty}\left(\frac{x-1}{x+3}\right)^{x+2}&=\lim\limits_{x\to\infty}\left(1+\dfrac{x-1}{x+3}-1\right)^{x+2}\\
+		&=\lim\limits_{x\to\infty}\left\{\left[1+\dfrac{-4}{x+3}\right]^{\dfrac{x+3}{-4}}	\right\}^{\dfrac{-4(x+2)}{x+3}}\\
+		&=e^{\lim\limits_{x\to\infty}\dfrac{-4(x+2)}{x+3}}\\
+		&=e^{-4}.
+		\end{align*}
+		
+		\item \begin{align*}
+		\lim\limits_{x\to 0}\left(1+\sin(x)\right)^{\dfrac{1}{x}}&=\lim\limits_{x\to 0}\left[\left(1+\sin(x)\right)^{\dfrac{1}{\sin(x)}}\right]^{\dfrac{\sin(x)}{x}}\\
+		&=e^{\lim\limits_{x\to 0}\dfrac{\sin(x)}{x}}\\
+		&=e.
+		\end{align*}
+		
+		\item \begin{align*}
+		\lim\limits_{x\to 0}\left(\cos(x)\right)^{x^2}&=\lim\limits_{x\to 0}\left(1+\cos(x)-1\right)^{x^2}\\
+		&=\lim\limits_{x\to 0}\left[1+\left(\cos(x)-1\right)^{\dfrac{1}{\cos(x)-1}}\right]^{\dfrac{\cos(x)-1}{x^2}}\\
+		&=e^{\lim\limits_{x\to 0}\dfrac{\cos(x)-1}{x^2}}\\
+		&=e^{\lim\limits_{x\to 0}\dfrac{\sin^2(x)}{x^2(1+\cos(x))}}\\
+		&=e^{-\frac{1}{2}}.
+		\end{align*}
+	\end{enumerate}
+\end{example}
+
+%%%%%%%%%%%%%%% Límites de la forma \lim\limits_{x\to a}\ln{f(x)}
+\begin{property}
+	Si \(\lim\limits_{x\to a}f(x)\) existe y adem\'as es positivo, se tiene que
+	\[
+	\lim\limits_{x\to a}\left[\ln f(x)\right]=\ln\left[\lim\limits_{x\to a}f(x)\right].
+	\]
+\end{property}
+
+Por ejemplo, calculen que
+\[
+\lim\limits_{x\to 0}\dfrac{\ln(1+x)}{x}=1.
+\]
+
+Con propiedades de la funci\'on Logar\'itmica tienen que
+\begin{align*}
+\lim\limits_{x\to 0}\dfrac{\ln(1+x)}{x}&=\lim\limits_{x\to 0}\left[\ln(1+x)^{\frac{1}{x}}\right]\\
+&=\ln\left[\lim\limits_{x\to 0}(1+x)^{\frac{1}{x}}\right]\\
+&=\ln e\\
+&=1.
+\end{align*}
+
+\begin{exercise}
+	Halle los l\'imites de:
+	\begin{enumerate}
+		\item \(\lim\limits_{x\to\infty}\left[\ln(2x+1)-\ln(x+2)\right]\)
+		\item \(\lim\limits_{x\to 0}\left(\frac{1}{x}\ln\sqrt{\frac{1+x}{1-x}}\right)\)
+		\item \(\lim\limits_{x\to 0}\frac{\ln(\cos x)}{x^2}\)
+		\item \(\lim\limits_{x\to 0}\frac{a^x-1}{x}\) con \(a>0.\)
+		\item \(\lim\limits_{x\to \infty}n\left(\sqrt[n]{a}-1\right)\) con \(a>0.\)
+		\item \(\lim\limits_{x\to 0}\frac{\sinh x}{x}\)
+	\end{enumerate}
+\end{exercise}
+
+Para continuar con la resoluci\'on de esta clase de ejercicios necesitan revisar las propiedades de la funci\'on Logaritmo.\newline
+
+\begin{example}
+	\begin{enumerate}
+		\item \begin{align*}
+		\lim\limits_{x\to\infty}\left[\ln(2x+1)-\ln(x+2)\right]&=\lim\limits_{x\to\infty}\ln\left(\dfrac{2x+1}{x+2}\right)\\
+		&=\ln\left(\lim\limits_{x\to\infty}\dfrac{2x+1}{x+2}\right)\\
+		&=\ln\left(\dfrac{2}{1}\right)\\
+		&=\ln 2.
+		\end{align*}
+		
+		
+		\item \begin{align*}
+		\lim\limits_{x\to 0}\left(\frac{1}{x}\ln\sqrt{\dfrac{1+x}{1-x}}\right)&=\lim\limits_{x\to 0}\dfrac{1}{x}\ln\left(\dfrac{1+x}{1-x}\right)^{\frac{1}{2}}\\
+		&=\lim\limits_{x\to 0}\dfrac{1}{2}\ln\left(\dfrac{1+x}{1-x}\right)^{\frac{1}{x}}\\
+		&=\dfrac{1}{2}\ln\left[\lim\limits_{x\to 0}\left(\dfrac{1+x}{1-x}\right)^{\frac{1}{x}}\right]\\
+		&=\dfrac{1}{2}\ln\left[\left(\dfrac{\lim\limits_{x\to 0}(1+x)^{\frac{1}{x}}}{\lim\limits_{x\to 0}(1-x)^{\frac{1}{x}}}\right)\right]\\
+		&=\dfrac{1}{2}\ln\left[\dfrac{e}{e^{-1}}\right]\\
+		&=\dfrac{1}{2}\ln\left(e^2\right)\\
+		&=1.
+		\end{align*}
+		
+		\item \begin{align*}
+		\lim\limits_{x\to 0}\frac{\ln(\cos x)}{x^2}&=\lim\limits_{x\to 0}\ln\left(\cos x\right)^{\frac{1}{x^2}}\\
+		&=\ln\left[\lim\limits_{x\to 0}(\cos x)^{\frac{1}{x^2}}\right], &\text{por el item 6 del ejercicio 11 obtenemos}\\
+		&=\ln\left(e^{-\frac{1}{2}}\right)\\
+		&=-\dfrac{1}{2}.
+		\end{align*}
+		
+		\item Tomando el cambio de variable \(y=a^x-1\) tienen que \(x=\frac{\ln(y+1)}{a},\) y adem\'as cuando \(x\to 0,\) \(y\to 0.\)\newline
+		
+		As\'i
+		\begin{align*}
+		\lim\limits_{x\to 0}\dfrac{a^x-1}{x}&=\lim\limits_{y\to 0}\dfrac{y}{\dfrac{\ln(1+y)}{\ln a}}\\
+		&=\lim\limits_{y\to 0}\dfrac{\ln a}{\dfrac{1}{y}\ln(1+y)}\\
+		&=\lim\limits_{y\to 0}\dfrac{\ln a}{\ln(1+y)^{\frac{1}{y}}}\\
+		&=\dfrac{\ln a}{\ln e}\\
+		&=\ln a.
+		\end{align*}
+		
+		\item Tomando el cambio de variable \(y=\frac{1}{n}\) se tiene que \(n=\frac{1}{y}\) y adem\'as cuando \(n\to\infty,\) \(y\to 0.\)\newline
+		
+		As\'i
+		\begin{align*}
+		\lim\limits_{x\to \infty}n\left(\sqrt[n]{a}-1\right)&=\lim\limits_{y\to 0}\dfrac{1}{y}\left(a^y-1\right)\\
+		&=\lim\limits_{y\to 0}\dfrac{a^y-1}{y},  &\text{por el problema anterior se tiene que}\\
+		&=\ln a.
+		\end{align*}
+		
+		\item Conocen que
+		\[
+		\sinh x=\dfrac{e^x-e^{-x}}{2}	,
+		\]
+		
+		as\'i
+		
+		\begin{align*}
+		\lim\limits_{x\to 0}\frac{\sinh x}{x}&=\lim\limits_{x\to 0}\dfrac{e^x-e^{-x}}{2x}\\
+		&=\dfrac{1}{2}\lim\limits_{x\to 0}\dfrac{e^{2x}-1}{xe^x}\\
+		&=\dfrac{1}{2}\lim\limits_{x\to 0}\dfrac{\left(e^2\right)^x-1}{x}\cdot e^{-x},&\text{por el problema 4 se tiene que}\\
+		&=\dfrac{1}{2}\ln 2^2\\
+		&=1.
+		\end{align*}
+	\end{enumerate}
+\end{example}
+
+	
+	
+
+
+
+
+
+
+
+\section*{Infinit\'esimos e infinitos}
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+
+\begin{definition}[Infinit\'esimos]
+	Si
+	\[
+	\lim\limits_{x\to a}f(x)=0,
+	\]
+	que por definici\'on de l\'imite es lo mismo decir que, dado \(\varepsilon>0\) existe \(\delta>0\) tal que
+	\[
+	\text{si }\left|f(x)\right|<\varepsilon,\text{ cuando }0<\left|x-a\right|<\delta,
+	\]
+	se dice que la funci\'on es infinitamente peque\~na o infinit\'esima cuando \(x\to a.\) De forma an\'aloga se determina la funci\'on infinit\'esima \(f(x),\) cuando \(x\to\infty.\)\newline
+	
+\end{definition}
+
+La suma y el producto de un n\'umero finito de infinit\'esimos, cuando \(x\to a,\) es tambi\'en un infinit\'esimo cuando \(x\to a.\)\newline
+
+Si \(f(x)\) y \(g(x)\) son infinit\'esimos cuando \(x\to a\,\) y 
+\[\lim\limits_{x\to a}\dfrac{f(x)}{g(x)}=C,
+\]
+donde \(C\) es real diferente de cero, llamamos a las funciones \(f(x)\) y \(g(x)\) infinit\'esimas de un mismo orden  o del mismo orden; si \(C=0,\) se dice que \(f(x)\) es infinit\'esima de orden superior con respecto a \(g(x).\) La funci\'on \(f(x)\) se denomina  infinit\'esima  de orden \(n\) con respecto a \(g(x),\) si
+\[
+\lim\limits_{x\to a}\dfrac{f(x)}{\left[g(x)\right]^n}=C,
+\]
+en donde \(0<\left|C\right|<+\infty.\)\newline
+
+Si
+\[
+\lim\limits_{x\to a}\dfrac{f(x)}{g(x)}=1,
+\]
+a \(f(x)\) y \(g(x)\) se las llama funciones equivalentes cuando \(x\to a;\)
+\[
+f(x)\sim g(x).
+\]
+
+Por ejemplo, si \(x\to 0\) tenemos que:
+\begin{align*}
+\sin x&\sim x,\\
+\tan x&\sim x,\\
+\log x&\sim x.
+\end{align*}
+
+\begin{property}
+	La suma de dos infinit\'esimos de orden distinto, equivale al sumando  cuyo orden es inferior.\newline
+	
+	El l\'imite de la raz\'on  de dos infinit\'esimos no se altera, si los t\'erminos de la misma  se sustituyen por otros cuyos valores respectivos son equivalentes.
+\end{property}
+
+Lo que nos quiere decir el teorema anterior es que, cuando deseen calcular el l\'imite 
+\[
+\lim\limits_{x\to a}\dfrac{f(x)}{g(x)},
+\]
+si \(f(x)\to 0\) y \(g(x)\to 0,\) cuando \(x\to a.\) Pueden restarle o sumarle al denominador y numerador infinit\'esimos de orden superior, elegidos de tal forma, que las funciones obtenidas tanto en el numerador como en el denominador sean equivalentes a las anteriores.\newline
+
+\begin{example}
+	Calculen el l\'imite
+	\[
+	\lim\limits_{x\to 0}\dfrac{\sqrt[3]{x^3+2x^4}}{\ln(1+2x)}.
+	\]
+	
+	Noten que, cuando \(x\to 0\) se tiene que
+	\begin{align*}
+	\sqrt[3]{x^3+2x^4}&\sim \sqrt[3]{x^3}\\	&\text{y}\\	\ln(1+2x)&\sim 2x.
+	\end{align*}
+	
+	As\'i tienen que
+	\begin{align*}
+	\lim\limits_{x\to 0}\dfrac{\sqrt[3]{x^3+2x^4}}{\ln(1+2x)}&=\lim\limits_{x\to 0}\dfrac{\sqrt[3]{x^3}}{2x}\\
+	&=\lim\limits_{x\to 0}\dfrac{x}{2x}\\
+	&=\dfrac{1}{2}.
+	\end{align*}
+\end{example}
+
+
+\begin{exercise}
+	Determine el orden  infinitesimal, cuando \(x\to 0\) de las siguientes funciones:
+	\begin{enumerate}
+		\item \(f(x)=\frac{2x}{1+x},\)
+		\item \(f(x)=\sqrt[3]{x^2}-\sqrt{x^3},\)
+		\item \(f(x)=\tan (x)-\sin(x).\)
+	\end{enumerate}
+\end{exercise}
+
+\begin{example}
+	\begin{enumerate}
+		\item Sea \(f(x)=\frac{2x}{1+x},\) se tiene que
+		\[
+		\dfrac{\dfrac{2x}{1+x}}{x^n}=\dfrac{2x}{(1+x)x^n}=2,
+		\]
+		cuando \(x\to 0\) \(1+x\to 1,\) entonces 
+		\[
+		\dfrac{2x}{x^n}=2,
+		\]
+		lo que implica que
+		\[
+		x=x^n
+		\]
+		y obtenemos que \(n=1.\)
+		
+		\item Sea \(f(x)=\sqrt[3]{x^2}-\sqrt{x^3},\) obtienen que
+		\[
+		\dfrac{x^{\frac{2}{3}}-x^{\frac{3}{2}}}{x^n}=1\Rightarrow\dfrac{x^{\frac{2}{3}}\left(1-x^{\frac{5}{6}}\right)}{x^n}=1,
+		\]
+		cuando \(x\to 0,\) \(\;1-x^{\frac{5}{6}}\to 1.\) Entonces tienen que
+		\[
+		\dfrac{x^{\frac{2}{3}}}{x^n}=1\Rightarrow n=\dfrac{2}{3}.
+		\]
+		
+		\item Tienen que
+		\[
+		\dfrac{\tan(x)-\sin(x)}{x^n}=\dfrac{\sin(x)}{\cos(x)}\cdot\dfrac{1-\sqrt{1-\sin^2(x)}}{x^n}=1.
+		\]
+		
+		Cuando \(x\to 0,\) \(\;\sqrt{1-\sin^2(x)}\to 1-\sin^2(x),\) as\'i 
+		\[
+		\dfrac{\tan(x)-\sin(x)}{x^n}=\dfrac{\tan(x)\cdot\sin^2(x)}{x^n}=\dfrac{\sin^3(x)}{x^n\cos(x)}.
+		\]
+		
+		Ahora, cuando \(x\to 0,\) \(\;\sin(x)\to 0\) y \(\cos(x)\to 1,\) lo que implica que
+		\[
+		n=3.
+		\]
+	\end{enumerate}
+\end{example}
+
+\begin{definition}[Infinitos]
+	Si para un n\'umero	real positivo grande \(M,\) existe \(\delta>0\) tal que, para \(0<\left|x-a\right|<\delta\) se verifica que 
+	\[
+	\left|f(x)\right|>M,
+	\]
+	a la funci\'on \(f(x)\) se la llama infinita cuando \(x\to a.\) De manera an\'aloga, \(f(x)\) se dice que es infinita cuando \(x\to \infty.\)
+\end{definition}
+
+El teorema planteado para los infinit\'esimos tambi\'en se cumple para los infinitos.
+
+\begin{exercise}
+	Demostrar que la funci\'on \(f(x)=\frac{\sin x}{x}\) es infinitamente peque\~na, cuando \(x\to\infty.\)
+	Si \(\varepsilon>0,\) ?`para qu\'e valores de \(x\) se cumple la desigualdad \(\left|f(x)\right|<\varepsilon\)?
+\end{exercise}
+
+\begin{proof}
+	Debemos demostrar que
+	\[
+	\lim\limits_{x\to\infty}\dfrac{\sin x}{x}=0,
+	\]
+pero conocen que
+\[
+x>0\Rightarrow\dfrac{1}{x}>0,
+\]
+adem\'as que
+\[
+-1\leq\sin x\leq 1,
+\]
+de lo que podemos concluir que
+\[
+-\dfrac{1}{x}\leq\sin x\leq\dfrac{1}{x}.
+\]
+
+Ahora por el Teorema del Sanduche obtenemos que
+\[
+\lim\limits_{x\to\infty}\dfrac{\sin x}{x}=0,
+\]
+lo que implica que \(f(x)=\frac{\sin x}{x}\) es infinitamente peque\~na cuando \(x\to\infty.\)\newline
+
+Veamos para que valores se cumple la desigualdad 
+\[
+\left|f(x)\right|<\varepsilon.
+\]
+
+Sea \(\varepsilon>0,\) como 
+\[
+f(x)=\dfrac{\sin x}{x}\Rightarrow\left|\dfrac{\sin x}{x}\right|\leq\left|\dfrac{1}{x}\right|<\varepsilon,
+\]
+de donde
+\[
+\left|x\right|>\dfrac{1}{x}.
+\]
+\end{proof}
+
+\begin{exercise}
+	Calcule los siguientes l\'imites:
+	\begin{enumerate}
+		\item \(\lim\limits_{x\to 0}\dfrac{\sin(3x)\cdot\sin(5x)}{(x-x^3)^2}\)
+		\item \(\lim\limits_{x\to 1}\dfrac{\ln x}{1-x}.\)
+	\end{enumerate}
+\end{exercise}
+
+Tenga en cuenta que
+\[
+\lim\limits_{x\to 0}\dfrac{\sin(x)}{x}=1;
+\]
+
+y cuando \(x\to 0,\) \(\,\ln x\to x.\)\newline
+
+
+\begin{example}
+	\begin{enumerate}
+		\item \begin{align*}
+		\lim\limits_{x\to 0}\dfrac{\sin(3x)\cdot\sin(5x)}{(x-x^3)^2}&=\lim\limits_{x\to 0}\dfrac{\sin(3x)\cdot\sin(5x)}{x^2}\\
+		&=\lim\limits_{x\to 0}\dfrac{3\sin(3x)}{3x}\cdot\dfrac{5\sin(5x)}{5x}\\
+		&=15.
+		\end{align*}
+		
+		\item Cuando \(x\to 1,\) \(\,1-x\to x.\) Tienen que
+		
+		 \begin{align*}
+		\lim\limits_{x\to 1}\dfrac{\ln x}{1-x}&=\lim\limits_{x\to 1}\dfrac{x}{-x}\\
+		&=-1.
+		\end{align*}
+	\end{enumerate}
+\end{example}
+
+Ahora, vamos a demostrar la equivalencia de algunas funciones.\newline
+
+\begin{exercise}
+	Demuestre que cuando \(x\to 0,\) las siguientes expresiones sone quivalentes:
+	\begin{enumerate}
+		\item \(\frac{x}{2}\approx\sqrt{1+x}-1.\)
+		\item \(\frac{1}{1+x}\approx 1-x.\)
+		\item \((1+x)^n\approx 1+nx,\) donde \(n\in\mathbb{N}.\)
+	\end{enumerate}
+\end{exercise}
+
+
+ \begin{example}
+ 	\begin{enumerate}
+ 		\item Para que ambas funciones sean equivalentes se debe probar que
+ 		\[
+ 		\lim\limits_{x\to 0}\dfrac{\dfrac{x}{2}}{\sqrt{1+x}-1}=1,
+ 		\]
+ 		es decir, que
+ 		\[
+ 		\lim\limits_{x\to 0}\dfrac{x}{\sqrt{1+x}-1}=2.
+ 		\]
+ 		
+ 		Ambas funciones son equivalentes pues
+ 		
+ 		\begin{align*}
+ 		\lim\limits_{x\to 0}\dfrac{x}{\sqrt{1+x}-1}&=\lim\limits_{x\to 0}\dfrac{x(\sqrt{1+x}+1)}{x}\\
+ 		&=2.
+ 		\end{align*}
+ 		
+ 		Tambi\'en pueden observar que lo demostrado anteriormente implica que
+ 		
+ 		\[
+ 		1+\dfrac{x}{2}\approx\sqrt{1+x}.
+ 		\]
+ 		
+ 		\item Para probar que son equivalentes deben probar que
+ 		\[
+ 		\lim\limits_{x\to 0}\dfrac{\frac{1}{1+x}}{1-x}=1.
+ 		\]
+ 		
+ 		Pero, el l\'imite anterior es lo mismo que
+ 		\[
+ 		\lim\limits_{x\to 0}\dfrac{1}{1-x^2}=1.
+ 		\]
+ 		
+ 		\item De manera similar, para probar que son equivalentes se debe probar que
+ 		\[
+ 		\lim\limits_{x\to 0}\dfrac{(1+x)^n}{1+nx}=1,
+ 		\]
+ 		pero es f\'acil ver que se sigue el resultado.
+ 	\end{enumerate}
+ \end{example}
+ 
+ En el siguiente ejercicio van a demostrar un resultado importante para l\'imites de polinomios cuando \(x\to\infty.\)\newline
+ 
+ \begin{exercise}
+ 	Demuestre que, cuando \(x\to\infty,\) el polinomio entero
+ 	\[
+ 	P(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_0,\qquad\text{con }a_n\neq 0
+ 	\]
+ 	es una magnitud infinit\'esima, y equivale al t\'ermino superior \(a_nx^n.\)
+ \end{exercise}
+ 
+ \begin{proof}
+ 	Para demostrar que son equivalentes debemos probar que se cumple el l\'imite siguiente:
+ 	\[
+ 	\lim\limits_{x\to\infty}\dfrac{a_nx^n+a_{n-1}x^{n-1}+\cdots+a_0}{a_nx^n}=1.
+ 	\]
+ 	
+ 	As\'i, podemos ver que
+ 	
+ 	\begin{align*}
+ 	\lim\limits_{x\to\infty}\dfrac{a_nx^n+a_{n-1}x^{n-1}+\cdots+a_0}{a_nx^n}&=\lim\limits_{x\to\infty}\left(1+\dfrac{a_{n-1}}{a_nx}+\dfrac{a_{n-2}}{a_nx^2}+\cdots+\dfrac{a_0}{a_nx^n}\right)\\
+ 	&=1+0+0+\cdots+0\\
+ 	&=1.
+ 	\end{align*}
+ 	
+ 	Con lo cual queda demostrado el resultado.
+ \end{proof}
+ 
+ 
+\section*{Continuidad}
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%
+	
+	\begin{definition}
+		\(f\) se dice continua en \(x=a\,\) si
+		\begin{enumerate}
+			\item La funci\'on \(f\) est\'a determinada en \(x=a\)
+			\item existe, y es finito el l\'imite 
+			\[
+			\lim\limits_{x\to a}f(x),
+			\]
+			
+			\item y
+			\[
+			\lim\limits_{x\to a}f(x)=f(a).
+			\]
+		\end{enumerate}
+	\end{definition}	
+	
+	Sea \(f:A\subset\mathbb{R}\to\mathbb{R}\) una funci\'on, se dice que \(f\) es continua en \(A\), si y solo si para \(f\) es continua en todo \(a\) elemento de \(A.\)\newline
+	
+	\begin{exercise}
+		Demostrar que la funci\'on \(y=\sin(x)\) es continua en todos los reales.
+	\end{exercise}
+	
+	Recuerden que, tanto la funci\'on Seno como Coseno tiene su recorrido en el itnervalo \([-1;1].\)\newline
+	
+	\begin{proof}
+		Veamos a que equivale un incremento infinit\'esimo en la funci\'on, es decir, supongamos que \(\Delta x\to 0\) y veamos que sucede con \(\Delta y.\)\newline
+		
+		As\'i, tienen que
+		
+		\begin{align*}
+		\Delta y&=\sin(x+\Delta x)-\sin(x)\\
+		&=2\sin\left(\dfrac{\Delta x}{2}\right)\cos\left(x+\dfrac{\Delta x}{2}\right)\\
+		&=\dfrac{\sin\left(\dfrac{\Delta x}{2}\right)}{\dfrac{\Delta x}{2}}\cos\left(x+\dfrac{\Delta x}{2}\right)\Delta x.
+		\end{align*}
+		
+		Aplicando l\'imites obtienen que 
+		\[
+		\lim\limits_{\Delta x\to 0}\Delta y=0,
+		\]
+		pues 
+		\[
+		\lim\limits_{\Delta x\to 0}\dfrac{\sin\left(\dfrac{\Delta x}{2}\right)}{\dfrac{\Delta x}{2}}=1\qquad\text{y}\qquad\left|\cos\left(x+\dfrac{\Delta x}{2}\right)\right|\leq 1.
+		\]
+		
+		De lo cual podemos concluir que la funci\'on \(y=\sin(x)\) es continua en cualquier \(x\in\mathbb{R}.\)
+	\end{proof}
+	
+	
+\begin{definition}
+		Sea \(f:A\subset\mathbb{R}\to\mathbb{R}\) una funci\'on, se dice que \(x_0\) es un punto de discontinuidad si los n\'umeros \(f(x_0),\) \(f(x_o^-)\) y \(f(x_o^+)\) son diferentes.
+\end{definition}
+	
+	Sea la funci\'on \(f(x)=\frac{1}{x},\) calculen los l\'imites por la izquierda y por la derecha en \(x=0.\)
+	
+	\begin{align*}
+	&\lim\limits_{x\to 0^+}\dfrac{1}{x}=+\infty&\lim\limits_{x\to 0^-}\dfrac{1}{x}=-\infty
+	\end{align*}
+	
+	Ahora, noten que \(f(0)\) no existe, con lo cual \(f(x)\) no es continua en \(x=0.\)\newline
+	
+\begin{property}
+	Sean \(f_1,f_2:A\subset\mathbb{R}\to \mathbb{R}\) dos funciones continuas en \(a\in A.\) Se cumplen las siguientes propiedades:
+	\begin{enumerate}
+		\item \(f_1+f_2\) es continua en \(a.\)
+		\item \(f_1\cdot f_2\) es continua en \(a.\)
+		\item \(f_1/f_2\) es continua en \(a\) si \(f_2(a)\neq 0.\)
+	\end{enumerate}
+	
+	Este resultado se puede ampliar a un n\'umero finito de funciones continuas.
+\end{property}
+
+\begin{property}
+	La composici\'on de funciones continua d\'a como resultado una funci\'on continua.
+\end{property}
+
+\begin{exercise}
+	Prueben si las siguientes funciones son continuas o no:
+	
+	\begin{enumerate}
+		\item \(f(x)\frac{\sin x}{\left|x\right|}\)
+		\item \(f(x)=1-\sqrt{1-x^2}\)
+		\item ?`Qu\'e debe valer \(a\) para que el siguiente funci\'on sea continua?
+		\[
+		f(x)=\begin{cases}
+		\dfrac{x^2-4}{x-2}&\text{, si }x\neg 2\\
+		a&\text{, si }x= 2
+		\end{cases}
+		\]
+	\end{enumerate}
+	
+\end{exercise}
+
+Recuerden que
+\[
+\left|x\right|=\begin{cases}
+x &, \text{ si }x\geq0\\
+-x &, \text{ si }x<0\\
+\end{cases}.
+\]
+
+\begin{example}
+	\begin{enumerate}
+		\item Noten que \(f(0)\) no existe. Ahora calculen los l\'imites por la izquierda y por la derecha de \(x=0.\)
+		
+		\begin{align*}
+		\lim\limits_{x\to 0^+}\dfrac{\sin x}{\left|x\right|}&=\lim\limits_{x\to 0^+}\dfrac{\sin x}{x}\\
+		&=1\\
+		&\neq -1\\
+		&=\lim\limits_{x\to 0^-}\dfrac{\sin x}{x}\\
+		&\lim\limits_{x\to 0^-}\dfrac{\sin x}{\left|x\right|}
+		\end{align*}
+		
+		 Que no es igual a 
+		 \begin{align*}
+		 \lim\limits_{x\to 0^-}\dfrac{\sin x}{\left|x\right|}&=\lim\limits_{x\to 0^-}\dfrac{\sin x}{x}\\
+		 &=-1.
+		 \end{align*}
+		 
+		 Por lo cual la funci\'on \(f(x)\) es discontinua en \(x=0.\)
+		 
+		 \item Noten que el dom\'inio de la funci\'on \(f\) es \([-1;1].\)\newline
+		 
+		 Sea \(a\in[-1;1],\)
+		 
+		 \begin{align*}
+		 \lim\limits_{x\to a}{1-\sqrt{1-x^2}}&=1-\lim\limits_{x\to a}\sqrt{1-x^2}\\
+		 &=1-\sqrt{\lim\limits_{x\to a}1-x^2}\\
+		 &=1-\sqrt{1-a^2}\\
+		 &=f(a).
+		 \end{align*}
+		 
+		 Por lo cual la funci\'on es continua en \([-1;1].\)
+		 
+		 \item \begin{alignat*}{2}
+		 \lim\limits_{x\to 2^+}\dfrac{x^2-4}{x-2}&=\lim\limits_{x\to 2^+}(x+2)	&\qquad \lim\limits_{x\to 2^-}\dfrac{x^2-4}{x-2}&=\lim\limits_{x\to 2^-}(x+2)\\
+		 &=4 &\qquad &=4
+		 \end{alignat*}
+		 Ahora, 
+		 
+		 \[
+		 f(2^+)=f(2^-)=f(2)=a,
+		 \]
+		 
+		 con lo cual para que \(f\) sea continua, \(a=4.\)
+	\end{enumerate}
+\end{example}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+panel\chapter*{Diferenciaci\'on y derivaci\'on}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%		DEFINICI\'ON
+\begin{definition}
+	La derivada \(f'(x)\) se encuentra definida por
+	\[
+	f'(x)=\lim\limits_{h\to 0}\dfrac{f(x+h)-f(x)}{h},
+	\]
+	si el l\'imite anterior existe. El n\'umero \(f'(x)\) es llamado la derivada de \(f\) en \(X.\)
+\end{definition}
+
+
+Comencemos probando las derivadas de algunas funciones ya conocidas.\newline
+
+\begin{exercise}
+	Calcule las derivadas de las funciones:
+	
+	\begin{enumerate}
+		\item \(f(x)=x^n\)
+		\item \(f(x)=\sin(x)\)
+		\item \(f(x)=\left|x\right|\)
+	\end{enumerate}
+\end{exercise}
+
+Recordemos que, para \(x,y\in\mathbb{R}\) se tiene que
+
+\[
+\sin(y)-\sin(x)=\cos\left(\dfrac{y-x}{2}\right)\cos\left(\dfrac{y+x}{2}\right).
+\]
+
+Tambien recordemos que
+\[
+(a+b)^n=\displaystyle\sumabinomio{a}{b}{k}{n}\]
+
+\begin{example}
+	\begin{enumerate}
+		\item \begin{align*}
+		f'(x)&=\lim\limits_{h\to 0}\dfrac{(x+h)^n-x^n}{h}\\
+			&=\lim\limits_{x\to 0}\dfrac{\sumabinomio{x}{h}{k}{n}-x^n}{h}\\
+			&=\lim\limits_{h\to 0}\dfrac{x^n+\sum_{k=1}^{n}\binom{n}{k}x^{n-k}h^{k}-x^n}{h}\\
+			&=\lim\limits_{h\to 0}\left(\binom{n}{1}x^{n-1}+\sum_{k=2}^{n}\binom{n}{k}x^{n-k}h^{k-1}	\right)\\
+			&=nx^{n-1}
+		\end{align*}
+		
+		
+		\item \begin{align*}
+		f'(x)&=\lim\limits_{h\to 0}\dfrac{\sin(x+h)-\sin(x)}{h}\\
+		&=\lim\limits_{h\to 0}\dfrac{\sin\left(\frac{h}{2}\right)}{\frac{h}{2}}\cos\left(x+\dfrac{h}{2}\right)\\
+		&=\cos(x).
+		\end{align*}
+		
+		\item 
+	\end{enumerate}
+	\[
+	f(x)=\sin(x).
+	\]
+	
+	
+\end{example}

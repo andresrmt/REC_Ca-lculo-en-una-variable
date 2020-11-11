@@ -1,0 +1,524 @@
+\documentclass[11pt]{report}
+
+\usepackage[latin9]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[spanish,es-nolayout,es-nodecimaldot]{babel}
+
+\usepackage{makeidx}
+
+\usepackage{multicol}
+
+%\usepackage{arev}
+%\usepackage{mathptmx}
+
+\usepackage[sfmath]{kpfonts}
+\renewcommand*\familydefault{\sfdefault}
+
+\usepackage{amsmath,amssymb,amsthm,mathrsfs,bm,ifthen}
+
+\usepackage{cancel}
+\usepackage{soul}
+
+\usepackage[dvipsnames,svgnames]{xcolor}
+\usepackage{colortbl}
+\usepackage{tikz}
+
+\usepackage{pifont}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{longtable}
+
+\usepackage{nextpage}
+
+\usepackage{pst-eucl,pstricks-add}
+\usepackage[framemethod=TikZ]{mdframed}
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=3.0cm,right=3.0cm]{geometry}
+
+\usepackage[bookmarks,colorlinks,linkcolor=red]{hyperref}
+
+%\usepackage{materialjc,macmatjc}  \\paquetes de JC
+
+\setstretch{1.2}
+%\setstretch{1.04}
+
+\parskip 0.7\baselineskip
+%\parskip 0.3\baselineskip
+
+\parindent 0pt
+
+\allowdisplaybreaks
+
+\setulcolor{red}
+
+\bibliographystyle{plain}
+
+%%%%\tccbjc: tikz caja centrada borde jc
+%%%% #1: color de fondo, #2: color del borde, #3: color del texto
+%%%% #4: separaciÛn interna, #5: ancho de la caja, #6: el texto
+\newcommand{\tccbjc}[6]{%
+\begin{center}
+\begin{tikzpicture}[rounded corners]
+\draw (0,0) node[text justified, text width=#5, fill = #1, inner sep = #4]
+{\color{#3}
+#6};
+\draw[color = #2, rounded corners] (current bounding box.south west) rectangle
+(current bounding box.north east);
+\end{tikzpicture}
+\end{center}
+}
+%%
+
+\renewcommand{\CancelColor}{\red}
+
+%%%%
+%%  Definiciones provisionales
+%%%%
+\newcommand{\titleexample}[1]{\textcolor{red}{\small{\textsc{#1}}}}
+
+\definecolor{PD}{named}{OliveGreen}
+\newcommand{\pd}[1]{\textcolor{PD}{#1}}
+
+%%% \enunciado
+\newcommand{\enunciado}[1]{\textit{\color{OliveGreen} #1}}
+
+%%% \retroalimentacion
+\newcommand\retroalimentacion{\textsc{\textbf{\textcolor{red}{RetroalimentaciÛn}}}}
+
+%%% \demostracion
+\newcommand\demostracion{\textsc{\textbf{\textcolor{red}{DemostraciÛn}}}}
+
+%%% \finretroalimentacion
+\newcommand\finretroalimentacion{\hfill\textsc{\textbf{\textcolor{red}{Fin de la retroalimentaciÛn}}}}
+
+%%% \finadvertencia
+\newcommand\finadvertencia{\hfill\textbf{\textcolor{red}{Fin de la advertencia}}}
+
+%%% \finatencion
+\newcommand\finatencion{\hfill\textbf{\textcolor{red}{Fin de la atenciÛn}}}
+
+%%% \listapropiedades
+%\newcommand\listapropiedades{\texttt{\textcolor{DarkOrchid}{Lista de propiedades}}}
+
+%%% \listapropiedades
+\newcommand{\listapropiedades}[1]{%
+  \texttt{\textcolor{DarkOrchid}{#1}}%
+}
+
+%%% \justificacion
+\newcommand{\justificacion}[1]{%
+  \texttt{\textcolor{ForestGreen}{#1}}%
+}
+
+%%% \aqui
+\newcommand{\aqui}[1]{%
+  \rnode{#1}{\phantom{=}}%
+}
+
+%%%\une
+\newcommand{\une}[3]{%
+  \ncline[linecolor=#3]{->}{#1}{#2}%
+}
+%
+
+%%%\tr
+\newcommand{\tr}[1]{%
+  \textcolor{red}{#1}%
+}
+%
+
+%%%\borrador
+\def\borrador{%draft%
+}
+%
+
+%%%\borradorr
+\def\borradorr{%draft%
+}
+%
+
+%%%%\potencia
+\newcommand{\potencia}[2]{%
+  \overset{#2 \text{ veces}}{\overbrace{#1\cdot #1 \cdots #1}}
+}
+%
+
+\mdfdefinestyle{definitionstyle}{%
+  frametitlefontcolor=black,linecolor=DarkCyan,outerlinewidth=2pt,innerlinewidth=0pt%
+  frametitlerule=true,%
+  roundcorner=5pt,%
+  frametitlebackgroundcolor=DarkCyan!75,
+  innertopmargin=2.5\topskip,innerbottommargin=1.5\topskip
+  innerleftmargin=12pt,innerrightmargin=12pt,
+  skipabove=0.5\baselineskip,
+  skipbelow=0.5\baselineskip
+  }
+\mdtheorem[style=definitionstyle]{definition}{Definici\'{o}n}
+\mdtheorem[style=definitionstyle]{concepts}{Conceptos primitivos o fundamentales}
+
+\mdfdefinestyle{exercisestyle}{%
+  frametitlefontcolor=black,linecolor=Orange,outerlinewidth=2pt,innerlinewidth=0pt%
+  frametitlerule=true,%
+  roundcorner=5pt,%
+  frametitlebackgroundcolor=Orange!75,
+  innertopmargin=2.75\topskip,innerbottommargin=1.75\topskip
+  skipabove=\baselineskip,
+  skipbelow=0.5\baselineskip
+  }
+\mdtheorem[style=exercisestyle]{exercise}{Ejercicio}
+\mdtheorem[style=exercisestyle]{exercises}{Ejercicios}
+
+\mdfdefinestyle{principlestyle}{%
+  frametitlefontcolor=black,linecolor=Olive,outerlinewidth=2pt,innerlinewidth=0pt%
+  frametitlerule=true,%
+  roundcorner=5pt,%
+  frametitlebackgroundcolor=Olive!75,
+  innertopmargin=1.75\topskip,innerbottommargin=1.5\topskip
+  innerleftmargin=12pt,innerrightmargin=12pt,
+  skipabove=0.5\baselineskip,
+  skipbelow=0.5\baselineskip
+  }
+\mdtheorem[style=principlestyle]{principle}{Principio}
+\mdtheorem[style=principlestyle]{principles}{Principios}
+\mdtheorem[style=principlestyle]{axiom}{Axioma}
+
+\mdfdefinestyle{propertystyle}{%
+  frametitlefontcolor=black,linecolor=DarkOrchid,outerlinewidth=2pt,innerlinewidth=0pt%
+  frametitlerule=true,%
+  roundcorner=5pt,%
+  frametitlebackgroundcolor=DarkOrchid!75,
+  innertopmargin=2\topskip,innerbottommargin=1.25\topskip
+  innerleftmargin=12pt,innerrightmargin=12pt,
+  skipabove=0.5\baselineskip,
+  skipbelow=0.5\baselineskip
+  }
+%\mdtheorem[style=propertystyle]{property}{Propiedad}
+\mdtheorem[style=propertystyle]{property}{Teorema}
+
+\mdfdefinestyle{examplestyle}{%
+  frametitlefontcolor=black,linecolor=Yellow,outerlinewidth=2pt,innerlinewidth=0pt%
+  frametitlerule=true,%
+  roundcorner=5pt,%
+  frametitlebackgroundcolor=Yellow!50,
+  innertopmargin=2\topskip,innerbottommargin=1.25\topskip
+  skipabove=0.5\baselineskip,
+  skipbelow=0.5\baselineskip
+  }
+\mdtheorem[style=examplestyle]{example}{Ejemplo}
+\mdtheorem[style=examplestyle]{examples}{Ejemplos}
+
+\mdfdefinestyle{procedurestyle}{%
+  frametitlefontcolor=black,linecolor=Orange,outerlinewidth=2pt,innerlinewidth=0pt%
+  frametitlerule=true,%
+  roundcorner=5pt,%
+  frametitlebackgroundcolor=Orange!50,
+  innertopmargin=2\topskip,innerbottommargin=1.25\topskip
+  skipabove=0.5\baselineskip,
+  skipbelow=0.5\baselineskip
+  }
+\mdtheorem[style=procedurestyle]{procedure}{Procedimiento}
+
+\mdfdefinestyle{countingstyle}{%
+  linecolor=DarkOrange,outerlinewidth=2pt,innerlinewidth=0pt%
+  frametitlerule=true,%
+  roundcorner=5pt,%
+  frametitlebackgroundcolor=DarkOrange!75,
+  innertopmargin=2\topskip,innerbottommargin=1.25\topskip
+  skipabove=0.5\baselineskip,
+  skipbelow=0.5\baselineskip
+  }
+\mdtheorem[style=countingstyle]{counting}{T\'ecnica de conteo}
+
+%#1: n˙mero de objetos seleccionado
+%#2: total de objetos
+\newcommand\variaciones[2]{V_{#1}^{#2}}
+\newcommand\variacionesR[2]{VR_{#1}^{#2}}
+\newcommand\combinaciones[2]{C_{#1}^{#2}}
+\newcommand\combinacionesR[2]{CR_{#1}^{#2}}
+\newcommand\distribuciones[2]{D_{#1}^{#2}}
+
+%2015 04 06
+%%% \recurso{#1}{#2}{#3}
+%%% #1: Tipo de recurso; p.e., "Libro electrÛnico", "Libro electrÛnico con animaciones incrustadas", etcÈtera
+%%% #2: Nombre del recurso
+%%% #3: Etiqueta
+
+\newcommand\recurso[3][]{%
+  \begin{center}
+  \ifthenelse{\equal{#1}{}}{}{\label{#1}}
+  \bfseries\large\color{azulCLAVEMAT}
+  \underline{#2}:
+
+  \underline{#3}
+  \end{center}%
+}
+
+\def\espacio{\quad \textcolor{Red}{\Box} \quad }
+%%% \begin{animacioni}[#1] ... \end{animacioni}
+%%% #1: Opcional. Para texto alternativo del encabezado de la tercera columna: "AmimaciÛn en pantalla$^\ast$
+
+\newenvironment{animacioni}[1][Imagen / texto referencial en pantalla o animaciÛn en pantalla]{%
+  \begingroup
+    \begin{center}
+      \small
+      \setlength\extrarowheight{4pt}
+      \begin{longtable}{|>{\centering\hspace{0pt}}m{0.1\textwidth}%
+                        |>{\raggedright\hspace{0pt}}m{0.415\textwidth}%
+                        |>{\raggedright\hspace{0pt}}m{0.485\textwidth}|}\hline
+        \textbf{Secuencia} & \centering\textbf{Texto para locuciÛn} & \centering\hspace{0pt}\parbox{0.48\textwidth}{\textbf{#1}} \tabularnewline\hline
+        \endfirsthead
+        \hline\textbf{Secuencia} & \centering\textbf{Texto para locuciÛn} & \centering\hspace{0pt}\parbox{0.48\textwidth}{\textbf{#1}} \tabularnewline\hline
+        \endhead
+        \multicolumn{3}{r}{\textit{Contin˙a en la p·gina siguiente}}
+        \endfoot
+        \hline
+        \endlastfoot}% Fin de begdef
+  {%
+      \end{longtable}
+    \end{center}
+  \endgroup}% Fin de enddef
+
+\newcommand\expositor{\texttt{Juan Carlos Trujillo} exponiendo}
+
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+\newcommand\headerle[3]{%
+  \thispagestyle{empty}
+
+  \vspace{7.5\baselineskip}
+  \begin{center}
+    \psframebox[border=0pt,linecolor=white,fillstyle=solid,fillcolor=Red]{\textcolor{white}{\LARGE{SUBSECCI”N #1}}}
+    \\
+    \psframebox[border=0pt,linecolor=white,fillstyle=solid,fillcolor=black]{\textcolor{white}{\large{#2}}}
+  \end{center}
+
+  \vspace{10\baselineskip}
+  \begin{center}
+  \Huge
+  \textcolor{Red}{#3}
+  \end{center}
+
+  \newpage
+
+  \setcounter{page}{1}
+}
+
+\newcommand\headerlg[2]{%
+  \thispagestyle{empty}
+
+  \vspace{7.5\baselineskip}
+  \begin{center}
+    \psframebox[border=0pt,linecolor=white,fillstyle=solid,fillcolor=Red]{\textcolor{white}{\LARGE{SECCI”N #1}}}
+  \end{center}
+
+  \vspace{10\baselineskip}
+  \begin{center}
+  \Huge
+  \textcolor{Red}{#2}
+  \end{center}
+
+  \newpage
+
+  \setcounter{page}{1}
+}
+
+%%%\underlabel{#1}{#2}
+\newcommand\underlabel[2]{%
+  \underset{\footnotesize{\text{#2}}}{\underbrace{#1}}
+}%
+
+%%%\overlabel{#1}{#2}
+\newcommand\overlabel[2]{%
+  \overset{\footnotesize{\text{#2}}}{\overbrace{#1}}
+}%
+
+\definecolor{azulCLAVEMAT}{rgb}{0.04,0.41,0.75}
+
+
+%%%\entrega{#1}
+\newcommand\entrega[1]{%
+  \textcolor{red}{\ (fecha de entrega: #1)}
+}
+%
+
+%%% \plano
+\newcommand\plano{\mathscr{P}}
+%
+
+%%% \figura
+\newcommand\figura{\mathscr{F}}
+%
+
+%%% \figura
+\newcommand\semiplano{\mathscr{S}}
+%
+
+%%% \recta{#1}{#2}
+\newcommand\recta[2]{%
+  \overset{\longleftrightarrow}{#1#2}
+}
+%
+
+%
+\newcommand\entre[3]{%
+  #1\!-\!#2\!-\!#3%
+}
+
+%%%%
+\newcommand\segmento[2]{\overline{#1#2\,}}
+
+%%%%
+\newcommand\lado[2]{\overline{#1#2\,}}
+
+%%%%
+\newcommand\rayo[2]{\overrightarrow{#1#2}}
+
+%%%
+\newcommand\angulo[3]{\angle #1#2#3}
+
+%%%
+\newcommand\mangular[3]{\textrm{m}\,\angle #1#2#3}
+
+%%%
+\newcommand\mangularv[1]{\textrm{m}\,\angle #1}
+
+%%%%
+\newcommand\correspondencia[2]{%
+  \triangle #1 \longleftrightarrow \triangle #2%
+}
+
+%%%%
+\newcommand\congruencial[2]{%
+  \overline{#1\,} \cong \overline{#2\,}%
+}
+%%%%
+\newcommand\congl[2]{%
+  \overline{#1\,} \cong \overline{#2\,}%
+}
+
+%%%%
+\newcommand\congruenciaa[2]{%
+  \angle #1 \cong \angle #2%
+}
+%%%%
+\newcommand\conga[2]{%
+  \angle #1 \cong \angle #2%
+}
+
+%%%%
+\newcommand\congruenciat[2]{%
+  \triangle #1 \cong \triangle #2%
+}
+%%%%
+\newcommand\congt[2]{%
+  \triangle #1 \cong \triangle #2%
+}
+
+%%%%
+\newcommand\perpra[2]{%
+  \overrightarrow{#1} \perp \overrightarrow{#2}
+}
+
+%%%%
+\newcommand\perpre[2]{%
+  \overset{\longleftrightarrow}{#1} \perp \overset{\longleftrightarrow}{#2}
+}
+
+%%%%
+\newcommand\perps[2]{%
+  \lado{#1}\perp\lado{#2}
+}
+
+%%%%
+\newcommand\perprer[2]{%
+  \recta{#1}\perp\rayo{#2}
+}
+
+%%%%
+\newcommand\perprar[2]{%
+  \rayo{#1}\perp\recta{#2}
+}
+
+%%%%
+\newcommand\perpras[2]{%
+  \rayo{#1}\perp\lado{#2}
+}
+%%%%
+\newcommand\perpsra[2]{%
+  \lado{#1}\perp\rayo{#2}
+}
+
+%%%%
+\newcommand\perpres[2]{%
+  \overset{\longleftrightarrow}{#1}\perp\overline{#2\,}
+}
+%%%%
+\newcommand\perpsre[2]{%
+  \lado{#1}\perp\recta{#2}
+}
+
+%%%%
+\newcommand\semejanza[2]{%
+  \triangle #1 \simeq \triangle #2
+}
+
+\newcommand\fA{\textcolor{ForestGreen}{\texttt{S}}}
+\newcommand\fC{\textcolor{ForestGreen}{\texttt{D}}}
+\newcommand\fG{\textcolor{ForestGreen}{\texttt{P}}}
+\newcommand\fN{\textcolor{ForestGreen}{\texttt{N}}}
+\newcommand\fO{\textcolor{ForestGreen}{\texttt{O}}}
+\newcommand\rf[2]{\textcolor{ForestGreen}{\texttt{#1#2}}}
+\newcommand\pf[2]{\textcolor{ForestGreen}{(\texttt{#1, #2})}}
+\newcommand\rfe[2]{\textcolor{Maroon}{\texttt{#1#2}}}
+\newcommand\rt[3]{\textcolor{ForestGreen}{\texttt{#1#2#3}}}
+\newcommand\rc[4]{\textcolor{ForestGreen}{\texttt{#1#2#3#4}}}
+\newcommand\ri[5]{\textcolor{ForestGreen}{\texttt{#1#2#3#4#5}}}
+
+%%%%%%%%%%%%
+\newcommand{\poruno}[1]{\cdot\dfrac{#1}{#1}}
+
+\newcommand{\sumabinomio}[4]{\sum_{#3=0}^{#4}\binom{#4}{#3}{#1}^{#4-#3}{#2}^{#3}}
+
+																													
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\nocite{*}
+
+\title{ \\
+	para docentes de Educaci\'on General B\'asica: \\
+	contenidos y guion de virtualizaci\'on}
+
+\author{Elaboraci\'on de contenidos: Eduardo Arias}
+
+\date{}
+
+%\maketitle
+%\tableofcontents
+
+\chapter*{Prefacio}
+
+El presente documento es un texto gu\'ia en la resoluci\'on de ejercicios correspondiente a la materia de C\'alculo en una Variable, en el mismo se encontrar\'an presentes m\'ultiples dudas que los alumnos tienen al comenzar a resolver este tipo de ejercicios. Adem\'as, contiene un res\'umen de definiciones, teoremas y propiedades b\'asicas para la resoluci\'on de los mismos.\newline
+
+Este documento tiene el objetivo de que los alumnos aprendan como resolver todo tipo de ejercicios de esta materia, y adem\'as que tengan en consideraci\'on a esta materia pues el c\'alculo en una variable es algo simple y llamativo.
+  \cleartooddpage[\thispagestyle{empty}]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{Contenido/Texto}
+  \cleartooddpage[\thispagestyle{empty}]
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
